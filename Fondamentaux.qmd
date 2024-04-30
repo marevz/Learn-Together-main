@@ -1,0 +1,1829 @@
+---
+title: "Les fondamentaux de Python"
+---
+
+
+## Les variables (types natifs)
+ 
+
+**Qu'est ce qu'une variable ?**
+Une variable est un conteneur dans lequel tu peux stocker différents types de données : des nombres, des chaines de caractères, ou d'autres objets.
+
+Par exemple ``` a = 15 ``` est une variable nomée a avec pour valeur 15.
+
+Nous pouvons contaster :
+
+* L'affectation **(=)**
+
+* Python est un langage à typage dynamique, c'est-à-dire que le type des variables est déterminé lors de l'exécution du programme.
+
+* Sensible à la casse, la variable **"A"** et **"a"** sont deux variables différentes.
+
+* L'instruction **Print** permet d'imprimer plusieurs variables en même temps avec **(,)**.
+
+* Plusieurs valeurs à plusieurs variables ou plusieurs variables à plusieurs valeurs sur une seule ligne.
+
+* La dénomination des variables comportent :
+    + La casse *camel* : testVariableBox
+    + La casse *Pascal* : TestVariableBox
+    + La casse *serpent* : test_variable_box
+
+* Evite de:
+    + Nommer des variables en commançant par des chiffres
+    + Se servir de symboles comme des espaces ou des tirets
+    + Mixer des chaînes de caractères et des nombres entiers à l'intérieur de la concaténation
+
+
+1. **Affectation simple**
+
+
+```{python}
+
+ma_variable = 15
+print(ma_variable)
+
+```
+
+2. **Affectation à multiples variables**
+
+```{python}
+
+a, b, c = "Ananas", "Banane", "Coco"
+
+print(a)
+print(b)
+print(c)
+
+```
+
+3. **Affectation de la même valeur**
+
+```{python}
+
+a = b = c = "Coco"
+print(a)
+print(b)
+print(c)
+
+```
+
+
+### Types de variables
+
+En Python, les données courantes incluent :
+* les entiers (```int```) : des nombres sans décimale. 
+    + Exemple : ```7```, ```-1```.
+
+* Nombres Complexes (```complex```) : des nombres avec une partie réelle et une partie imaginaire.
+    + Exemple : ```4 + 2j```.
+
+* Flottants (```float```) : des avec au moins une décimale.
+    + Exemple : ```2.15```, ```-0.008```.
+
+* Chaîne de caractères (```str```) : une suite de caractères, délimitée par des guillemets simples ou doubles.
+    + Exemple : ```"Hello Ményssa !"```
+
+* Booléens (```bool```) : souvent le résultat d'expressions, de comparaison ou de conditions logiques. 
+    + Ils représentent uniquement deux valeurs : ```True``` (Vrai) et ```False``` (Faux).
+
+**La fonction type()**
+```{python}
+# Pour connaître le type de ton objet
+type("Bonjour")
+
+```
+
+**Exemple** : Vérifions le type de chaque variable en impliquant une phrase réponse
+```{python}
+# Définition de différentes variables
+prenom = "Mareva"
+age = 21
+taille = 1.63
+etudiant = True
+en_alternance = False
+
+```
+
+```{python}
+# Vérifications
+print("La variable prenoms est de type : ", type(prenom))
+```
+
+```{python}
+print("La variable age est de type : ", type(age))
+```
+
+```{python}
+print("La variable taille est de type : ", type(taille))
+```
+
+```{python}
+print("La variable etudiant est de type : ", type(etudiant))
+```
+
+```{python}
+print("La variable en_alternance est de type : ", type(en_alternance))
+```
+### Conversion de types
+
+Souvent appelée **"casting"** en programmation, la conversion de type est une manière de convertir une valeur d'un type donné en un autre type.
+
+En Python, il existe différentes fonctions intégrées pour réaliser ces conversions entre les types de base comme vue précédemment : les entiers (```int```), les chaînes de caractères(```str```), les booléens (```bool```), et les nombres à virgule flottante (```float```).
+
+Voici des exemples :
+
+* **Conversion en Entier (```int```)**
+
+```{python}
+# Depuis une chaîne de caractères : convertion de la chaîne "987" en entier 987
+chaine = "987"
+departement = int(chaine)  
+
+# Depuis un booléen : convertion de True en entier 0 
+vrai = False
+entier = int(False)  
+
+# Depuis un float : convertion d'un nombre décimal 10,02 en 10 entier (troncature, pas d'arrondi)
+flottante = 10.02
+entier = int(flottante)  
+```
+
+* **Conversion en chaine de caractère (```str```)**
+
+```{python}
+# Depuis un entier ou un float : convertion de l'entier 987 en chaîne "987"
+entier = 987
+chaine = str(entier) 
+
+# Depuis un booléen :
+vrai = True
+chaine = str(vrai)  # Convertion de True en "True"
+```
+
+* **Conversion en booléen (```bool```)**
+
+```{python}
+# Depuis une chaîne de caractères : 
+## Convertion d'une chaîne vide en False
+chaine1 = ""
+booleen = bool(chaine1) 
+## Convertion de "Prog" en True
+chaine2 = "Prog"
+booleen1 = bool(chaine2)  
+
+# Depuis un nombre** : 
+## Convertit 0 en False
+nombre1 = 0
+booleen1 = bool(nombre1) 
+## Convertit 987 en True
+nombre2 = 987
+booleen2 = bool(nombre2)  
+```
+
+* **Conversion en Float(```float```)**
+
+```{python}
+## Depuis une chaîne de caractères** :
+chaine = "123.45"
+flottant = float(chaine)  # Convertit la chaîne "123.45" en float 123.45
+
+## Depuis un entier** :
+entier = 100
+flottant = float(entier)  # Convertit l'entier 100 en float 100.0
+
+## Depuis un booléen** :
+vrai = True
+flottant = float(vrai)  # Convertit True en 1.0
+```
+
+### Opérations arithmétiques
+
+Arithmétique : Addition (+), soustraction (-), multiplication (*), et division (/).
+
+```{python}
+somme = 10 + 5       # Résultat: 15
+difference = 10 - 5  # Résultat: 5
+produit = 10 * 5     # Résultat: 50
+quotient = 10 / 5    # Résultat: 2.0
+```
+
+Modulo (%) retourne le reste de la division Puissance (**) élève un nombre à une certaine puissance.
+
+```{python}
+reste = 10 % 3       # Résultat: 1
+puissance = 2 ** 3   # Résultat: 8
+puissance_bis = 2 ^ 3
+```
+
+### Opérations sur les chaines de caractères
+
+* La concaténation **(+)** combine des chaînes
+* La répétition **(*)** répète une chaîne un certain nombre de fois.
+
+```{python}
+message = "Bonjour" + " le monde"  # Résultat: "Bonjour le monde"
+echo = "Ha" * 3                    # Résultat: "HaHaHa"
+```
+
+### Opérations d'affectation composées
+
+Les opérateurs d'affectation composés sont des raccourcis qui **combinent une opération arithmétique ou binaire avec une affectation.**
+
+En gros, ils vous permettent d'effectuer une opération sur une variable et de lui réaffecter le résultat en une seule étape.
+
+```{python}
+# Initialisation de x
+x = 5
+print(x)
+```
+```{python}
+# Ajouter et assigner
+x += 2  # x est maintenant 7
+print(x)
+```
+```{python}
+# Soustraire et assigner
+x -= 3  # x est maintenant 4
+print(x)
+```
+```{python}
+# Multiplier et assigner
+x *= 4  # x est maintenant 16
+print(x)
+```
+```{python}
+# Diviser et assigner
+x /= 2  # x est maintenant 8
+print(x)
+```
+```{python}
+# Division entière et assigner
+x //= 3  # x est maintenant 2
+print(x)
+```
+```{python}
+# Modulo et assigner
+x %= 3  # x est maintenant 2
+print(x)
+```
+```{python}
+# Exponentielle et assigner
+x **= 2  # x est maintenant 4
+print(x)
+```
+```{python}
+```
+
+
+## Commentaires et affichage
+
+Les **commentaires** sont utilisés pour expliquer le code.
+
+Ils sont très utiles pour vous-même et pour les autres personnes qui lisent votre code. Les commentaires commencent par un # et s'étendent jusqu'à la fin de la ligne.
+
+**Les commentaires sont ignorés lors de l'exécution du code.**
+
+```{python}
+# Ceci est un commentaire simple 
+
+x = 5  # Ceci est un commentaire suivant une instruction
+
+# Vous pouvez utiliser les commentaires pour expliquer
+# ce que votre code est censé faire :
+y = x + 2  # Ajout de 2 à x et stockage du résultat dans y
+```
+
+Pour **l'affichage**, la fonction **print()** est utilisée.
+Elle permet d'afficher le texte, les nombres, et d'autres objets sur la console.
+```{python}
+print("Bonjour, monde !")  # Affiche un message simple
+
+nombre = 10
+print(nombre)  # Affiche la valeur de la variable 'nombre'
+
+# Vous pouvez aussi combiner du texte et des variables :
+print("Le nombre est", nombre)  # Affiche "Le nombre est 10"
+```
+
+Utilisation de f-string
+```{python}
+prenom = 'Marie'
+age = 15
+taille = 207
+
+# Formatage de chaînes avec f-string pour une lisibilité améliorée :
+print(f"Marie a {age}") 
+print(f"{prenom}, est partie")
+```
+
+f-string avec Plusieurs Variables
+```{python}
+print(f"{prenom} mesure {taille} metres et a {age} ans")
+```
+
+Utilisation de format
+```{python}
+print("{} a {} ans ".format(prenom, age))
+```
+
+* L'instruction précédente utilise la méthode ```.format()``` pour insérer les variables dans la chaîne de caractères.
+
+* ```{}``` sont des placeholders (espaces réservés) qui seront remplacés par les arguments de ```.format()``` dans l'ordre.
+
+* ```ma_chaine``` et ```age``` seront insérés respectivement dans le premier et le second ```{}```.
+
+Calcul et arrondi
+
+* Le premier ```print(prop)``` affiche la valeur de ```prop``` avec tous ses chiffres après la virgule.
+
+* Le second ```print()``` utilise une f-string avec un formatage spécifique ```{prop:.2f}```.
+
+Cela signifie que la valeur de ```prop``` sera formatée pour afficher seulement deux chiffres après la virgule.
+
+```{python}
+prop = 2543276 / 678
+print(prop)
+print(f"le resultat est {prop:.3f}")
+```
+
+## Structure de contrôle
+
+### Les opérateurs
+
+Les opérateurs Python sont utilisés pour effectuer des opérations sur les variables et les valeurs.
+
+* **Les opérateurs de comparaison** incluent égal à, différent de, supérieur à, inférieur à, supérieur ou égal à, et inférieur ou égal à.
+    + Renvoient soit Vrai, soit Faux, en fonction du résultat de la comparaison.
+
+|Opérateur comparaison | Description |
+|---------|----------|----------|
+|Égalité | == |
+|Différent de | != |
+|Supérieur | > |
+|Inférieur | < |
+|Supérieur ou égale | >= |
+|Inférieur ou égale | <= |
+
+
+
+
+* **Les opérateurs logiques** et, ou et non sont souvent combinés avec les opérateurs de comparaison.
+
+| Opérateur logique | Description | Résultat |
+|-----------|-----------|-----------|
+| And | and | True si les deux propositions sont vraies |
+| Or | or | True si au moins une des propositions est Vraie |
+| Not | not | Inverse de l'instruction |
+
+
+* **Les opérateurs d'appartenance in et not in** sont utilisés pour vérifier si une valeur ou une chaîne de caractères se trouve à l'intérieur d'une autre valeur, chaîne de caractères ou séquence.
+
+| Opérateur logique | Description | Résultat |
+|-----------|-----------|-----------|
+| In | in | True si la valeur spécifiée est présente dans l'objet |
+| Not In | not in | True si la valeur spécifiée n'est pas présente dans l'objet |
+
+```{python}
+# Exemples d'opérateurs de comparaison
+print("Opérateurs de comparaison:")
+print(5 == 5)  # Égalité, renvoie True
+print(5 != 2)  # Différent de, renvoie True
+print(5 > 3)   # Supérieur à, renvoie True
+print(5 < 8)   # Inférieur à, renvoie True
+print(5 >= 3)  # Supérieur ou égal à, renvoie True
+print(5 <= 8)  # Inférieur ou égal à, renvoie True
+```
+```{python}
+# opérateurs logiques 
+## and 
+(5 > 3) and (10 < 100)
+```
+```{python}
+not ((5 > 3) and (10 > 100))
+```
+```{python}
+## or 
+(5 > 3) or (10 < 100)
+(5 > 3) or (10 > 100)
+```
+```{python}
+# operateurs d'appartenance
+# in et not in 
+x = [5, 10, 24] 
+10 in x 
+10 not in x 
+```
+
+**Chainer les comparateurs**
+Il est également possible de chainer les comparateurs:
+```{python}
+a, b, c = 1, 10, 100
+a < b < c
+```
+```{python}
+a > b < c
+```
+
+### Les conditions
+```{python}
+# condition
+x = 40 
+
+# Première condition : vérifie si x est inférieur à 10
+if x < 10:
+    print("x est inférieur à 10")
+
+# Deuxième condition : vérifie si x est supérieur ou égal à 100 
+elif x >= 100:
+    print("x est supérieur ou égal à 100")
+
+# Dernière condition : si toutes les conditions précédentes sont fausses
+else:
+    print("x est supérieur à 10 mais inférieur à 100")
+
+```
+
+```{python}
+# Initialisation des variables
+x = 100 
+y = 30 
+
+# Première condition : vérifie si x est inférieur à 10 ET y est supérieur à 20
+if (x < 10) and (y > 20):
+    print("x est inférieur à 10 et y est supérieur à 20")
+
+# Deuxième condition : vérifie si x est supérieur ou égal à 100 OU y est supérieur ou égal à 30
+elif (x >= 100) or (y >= 30):
+    print("x est supérieur ou égal à 100 ou y est supérieur ou égal à 30")
+
+# Dernière condition : si
+#  toutes les conditions précédentes sont fausses
+else:
+    print("x est supérieur à 10")
+
+```
+
+
+### Les boucles   
+
+**La boucle for** est utilisée pour parcourir des structures de données : liste, tuple, tableau, chaîne de caractères ou un dictionnaire.
+
+> La boucle commence par examiner le premier élément de la séquence, effectue des actions dans son corps, puis passe à l'élément suivant jusqu'à ce que la séquence soit terminée.
+
+* Boucle avec mot-clé "for", une **variable temporaire** pour contenir chaque élément, le mot-clé "in" et la séquence à parcourir, suivis de deux points. Jusqu'au bout de l'élément
+    + Appliquer des opérations sur la variable temporaire dans le corps de la boucle pour effectuer diverses opérations.
+    + Imbriquer des for"
+    + Sur les dictionnaires, on peut **boucler sur les clés et les valeurs à l'aide de la méthode "items()".**
+
+```{python}
+liste = list(range(5))
+liste
+```
+
+```{python}
+# Exemple de boucle for
+for i in liste:
+    print(i)
+```
+
+```{python}
+fruits = ["pomme", "banane", "mangue", "cerise"]
+for fruit in fruits:
+    print(fruit)
+```
+```{python}
+# print("Boucle for sur une liste:")
+# ma_liste = [1, 2, 3, 4, 5]
+# for element in ma_liste:
+#     print(element)
+
+nombres = [1, 2, 3, 4, 5]
+for nombre in nombres:
+    if nombre % 2 == 0:
+        print(f"{nombre} est pair")
+    else:
+        print(f"{nombre} est impair")
+```
+
+**La boucle while** itère sur un bloc de code tant qu'une condition spécifiée est vraie. Contrairement aux boucles "for", les boucles "while" continuent l'itération tant que la condition reste vraie.
+
+* "break" pour quitter prématurément une boucle "while", même si la condition est toujours vraie.
+
+* "else" peut être utilisée avec une boucle "while" pour spécifier un bloc de code qui s'exécutera lorsque la condition de la boucle ne sera plus vraie.
+
+* "continue" permet d'ignorer le code restant dans l'itération actuelle de la boucle et de passer à l'itération actuelle de la boucle et de passer à l'itération suivante.
+
+* !! Soyez prudent lorsque vous utilisez "continue" afin d'éviter de créer des boucles infinies.
+
+```{python}
+# Boucle while avec break
+print("\nBoucle while avec break:")
+i = 1
+while i <= 5:
+    print(i)
+    if i == 3:
+        print("Break à 3")
+        break
+    i += 1
+```
+
+```{python}
+# Boucle while avec continue
+print("\nBoucle while avec continue:")
+i = 0
+while i < 5:
+    i += 1
+    if i == 3:
+         continue
+    print(i)
+
+```
+
+```{python}
+# Boucle while avec else
+print("\nBoucle while avec else:")
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+else:
+    print("La condition n'est plus vraie (i > 5)")
+
+```
+
+```{python}
+# Exemple de boucle while True
+print("Boucle while True avec un mécanisme de sortie :")
+
+compteur = 0
+while True:
+    compteur += 1
+    print(compteur)
+
+    # Interrompre la boucle si compteur atteint 5
+    if compteur == 5:
+        print("Compteur a atteint 5, sortir de la boucle.")
+        break
+
+```
+
+```{python} 
+saisi = 5
+while True:  
+    if saisi == 5:
+        print("Vous avez saisi la valeur 5")
+        break
+    else: 
+        print("Saisissez un autre chiffre: ")
+```
+
+
+```{python}
+saisi_mot_de_passe = "azerty"
+
+while True:  
+    if saisi_mot_de_passe == "azerty":
+        print("Login success")
+        break
+    else: 
+        print("Login fail")
+        break
+```
+
+
+```{python}
+import random 
+
+nombre_aleatoire = random.randint(1, 10)
+nombre_aleatoire
+```
+
+## Types de données
+Chaque type de données séquentielles a ses propres caractéristiques et utilisations spécifiques, offrant une grande flexibilité pour le traitement des données. Les listes et les dictionnaires sont particulièrement populaires pour leur flexibilité et leurs capacités de stockage dynamique.
+
+### Les chaines de caractères
+Les chaînes de caractères (```str```) sont utilisées pour stocker et manipuler du texte. Elles sont définies en plaçant le texte entre guillemets simples (```'...'```), doubles (```"..."```) ou triples (```'''...'''``` ou ```"""..."""``` pour les chaînes sur plusieurs lignes).
+
+![   ](//images/indexation.png)
+
+* Séquences de caractères, indexées à partir de 0.
+
+* Peuvent être délimitées par des guillemets simples, doubles ou triples.
+
+* Exemple : ```"Mareva"```, ```'Prog'```.
+
+* Caractères d'Échappement : pour inclure des caractères spéciaux comme des guillemets ou des retours à la ligne dans une chaîne, utilisez des caractères d'échappement (```\```).
+
+```{python}
+citation = "Elle a dit \"Bonjour!\""
+retour_ligne = "Ligne 1\nLigne 2"
+```
+
+
+Les chaînes de caractères sont extrêmement polyvalentes et fournissent une gamme complète de méthodes pour le traitement de texte. Que ce soit pour la manipulation de base ou des opérations complexes, les chaînes sont un outil indispensable.
+
+```{python}
+# Définition chaines de caractères
+chaine_simple = 'Bonjour'
+longueur = len(chaine_simple) # 7
+print(f"{chaine_simple}, 'la longueur est {longueur}")
+```
+
+```{python}
+chaine_simple[3]
+```
+
+```{python}
+chaine_double = "Python"
+chaine_multiligne = """Ceci est une
+chaîne sur plusieurs
+lignes."""
+print(chaine_double,"\n", chaine_multiligne)
+
+# Acces aux éléments
+premier_char = chaine_simple[0]  # 'B'
+sous_chaine = chaine_double[1:4] # 'yth'
+print(premier_char, "et",  sous_chaine)
+
+# Concaténation 
+salutation = chaine_simple + ", " + chaine_double # 'Bonjour, Python'
+print(salutation)
+
+# Répétition
+echo = "echo " * 3  # 'echo echo echo '
+print(echo)
+```
+
+* Méthodes pour les Chaînes de Caractères : Les méthodes sont des fonctions qui sont associées à des objets spécifiques. Elles permettent d'exécuter des actions sur ces objets ou de manipuler leurs données internes. Voici quelques caractéristiques clés des méthodes :
+
+    + Association avec des Objets : Contrairement aux fonctions indépendantes, les méthodes sont liées à des objets. Par exemple, les méthodes de chaînes de caractères (str) sont conçues pour effectuer des opérations sur des chaînes de caractères spécifiques.
+
+    + Syntaxe : Une méthode est appelée en utilisant la notation pointée. Par exemple, objet.methode().
+
+    + Méthodes de Chaînes de Caractères : les chaînes de caractères disposent de méthodes telles que upper(), lower(), replace() pour convertir en majuscules, en minuscules ou remplacer une partie de la chaîne.
+
+    + Appel : Pour appeler une méthode, utilisez généralement la syntaxe objet.methode(arguments).
+
+
+```{python}
+# Méthodes str.isupper() et str.islower()
+majuscules = "PYTHON"
+minuscules = "python"
+
+is_upper = majuscules.isupper()
+is_lower = minuscules.islower()
+print(is_upper)  # Résultat : True
+print(is_lower)  # Résultat : True
+
+# Méthode str.upper()
+texte_upper = "python est génial".upper()
+print(texte_upper)  # Résultat : "PYTHON EST GÉNIAL"
+
+# Méthode str.lower()
+texte_lower = "Python est GÉNIAL".lower()
+print(texte_lower)  # Résultat : "python est génial"
+
+# Méthode str.capitalize()
+texte_capitalize = "python est génial".capitalize()
+print(texte_capitalize)  # Résultat : "Python est génial"
+
+# Méthode str.title()
+texte_title = "python est génial".title()
+print(texte_title)  # Résultat : "Python Est Génial"
+
+# Méthode str.find(substring)
+texte = "Python est génial"
+position = texte.find("est")
+print(position)  # Résultat : 7
+
+# Méthode str.replace(old, new)
+texte_replace = "Les pommes sont rouges.".replace("pommes", "bananes")
+print(texte_replace)  # Résultat : "Les bananes sont rouges."
+
+# Méthode str.split(separator)
+texte_split = "apple orange banana".split(" ")
+print(texte_split)  # Résultat : ["apple", "orange", "banana"]
+
+# Méthode str.join(iterable)
+elements = ["apple", "orange", "banana"]
+texte_join = ", ".join(elements)
+print(texte_join)  # Résultat : "apple, orange, banana"
+
+# Méthode str.strip()
+texte_strip = "   Bonjour   ".strip()
+print(texte_strip)  # Résultat : "Bonjour"
+
+# Méthode str.startswith(prefix)
+texte_startswith = "Bonjour, comment ça va ?".startswith("Bonjour")
+print(texte_startswith)  # Résultat : True
+
+# Méthode str.endswith(suffix)
+texte_endswith = "Leçon terminée.".endswith("terminée.")
+print(texte_endswith)  # Résultat : True
+```
+
+
+### Les listes
+
+Les listes sont des structures de données qui permettent de stocker une série d'éléments. Elles sont flexibles, peuvent contenir des éléments de différents types et sont **mutables** (modifiables).
+
+* **Listes** (```list```) :
+    + Collections ordonnées de valeurs, pouvant contenir divers types de données.
+    + Les éléments sont séparés par des virgules et entourés de crochets.
+    + Mutables (modifiables).
+    + Pour créer une liste, placez une série d'éléments séparés par des virgules entre crochets ```[]```. Exemple : ```[1, "a", 3.14]```.
+    + L'accès aux éléments se fait par leur index, en commençant par ```0```.
+    + Les listes étant mutables, vous pouvez modifier leurs éléments.
+
+```{python}
+# Définition de liste
+ma_liste = [1, 2, 3, "Python", 3.14, True]
+print(ma_liste)
+
+premier_element = ma_liste[0]  # Accède au premier élément (1)
+dernier_element = ma_liste[-1] # Accède au dernier élément (True)
+print(premier_element,"\n", dernier_element)
+
+ # Modifie le deuxième élément
+ma_liste[1] = "deux" 
+print(ma_liste)
+
+# Concaténation et Répétition
+combinee = ma_liste + ["autre", "liste"]
+print(combinee)
+repetee = [1, 2, 3] * 3
+print(repetee)
+```
+
+* **Le Slicing** : En plus d'accéder aux éléments d'une chaine un par un, Python fournit une syntaxe concise pour accéder aux sous-listes; cela est connu sous le nom de slicing :
+```{python}
+nums = list(range(5)) # range est une fonction intégrée qui crée une liste d'entiers
+nums                  # Renvoie "[0, 1, 2, 3, 4]"
+nums[2:4]             # Obtenir une tranche de l'index 2 à 4 (exclusif); renvoie "[2, 3]"
+nums[2:]              # Obtenir une tranche de l'index 2 jusqu'à la fin; renvoie "[2, 3, 4]"
+nums[:2]              # Obtenir une tranche du début jusqu'à l'index 2 (exclusif); renvoie "[0, 1]"
+nums[:]               # Obtenir une tranche de toute la liste; renvoie "[0, 1, 2, 3, 4]"
+nums[:-1]             # Les indices de tranche peuvent être négatifs; renvoie "[0, 1, 2, 3]"
+nums[::-1]            # Les indices de tranche peuvent être négatifs pour inverser l'ordre ; renvoie "[4, 3, 2, 1, 0]"
+
+```
+
+Attribuer à une tranche (même avec une source de longueur différente) est possible car les listes sont mutables :
+```{python}
+# Cas 1: source de même longueur
+nums1 = [1, 2, 3]
+nums1[1:] = [4, 5]     # Assigner une nouvelle sous-liste à une tranche
+nums1                  # Renvoie "[1, 4, 5]"
+
+# Cas 2: source de longueur différente
+nums2 = nums1
+nums2[1:] = [6]        # Assigner une nouvelle sous-liste à une tranche
+nums2                  # Renvoie "[1, 6]"
+id(nums1) == id(nums2) # Renvoie True car les listes sont mutables, c'est-à-dire qu'elles peuvent être modifiées sur place
+
+```
+
+Similaire aux tuples, lors de l'évaluation d'une plage sur les indices de liste (quelque chose de la forme [x:y] où x et y sont des indices dans la liste), si notre valeur de droite dépasse la longueur de la liste, Python renvoie simplement les éléments de la liste jusqu'à ce que la valeur dépasse la plage d'index.
+
+```{python}
+a = [1, 2, 3] # Index maximal adressable: 2
+a[:3]         # NE renvoie PAS d'erreur, renvoie plutôt [1, 2, 3]
+```
+
+* **Les méthodes des listes** : Chaque méthode offre une fonctionnalité unique pour manipuler des listes, rendant ces structures de données extrêmement flexibles et puissantes pour une variété de tâches en programmation Python.
+
+|Méthode | Description | Exemple | 
+|---------|----------|----------|
+|```append()``` | Ajoute un élément à la fin de la liste | ```list.append(8)``` | 
+|```extend()``` | Étend la liste en ajoutant tous les éléments d'une autre liste | ```list.extend([9, 12])``` | 
+|```insert()``` | Insère un élément à une position donnée| ```liste.insert(4, d)``` | 
+|```remove()``` |Supprime la première occurrence d'un élément | ```liste.remove('d')```| 
+|```pop()``` | Supprime et renvoie un élément à une position donnée (par défaut ,le dernier) | ```liste.pop()```| 
+|```clear()``` | Supprime tous les éléments de la liste | ```liste.clear()``` | 
+|```index()``` | Retourne l'indice du premier élément correspondant | ```liste.index('d')```| 
+|```count()``` | Compte le nombre d'occurences d'une élément spécifique | ```liste.count(8)``` | 
+|```sort()``` | Trie les élément de la liste (dans un ordre spécifique) | ```liste.sort()```| 
+|```reverse()``` | Inverse l'ordre des éléments de la liste | ```liste.reverse()``` | 
+
+
+```{python}
+# Création d'une liste de base
+ma_liste = [1, 2, 3]
+print(ma_liste)
+```
+
+```{python}
+# Utilisation de append()
+ma_liste.append("quatre")
+print("Après append(quatre):", ma_liste)
+# Utilisation de extend()
+ma_liste.extend([5, 6])
+print("Après extend([5, 6]):", ma_liste)
+# Utilisation de insert()
+ma_liste.insert(1, 'elephant')
+print("Après insert(1, 'elephant'):", ma_liste)
+# Utilisation de remove()
+ma_liste.remove('elephant')
+print("Après remove('elephant'):", ma_liste)
+# Utilisation de pop()
+element_supprime = ma_liste.pop()
+print("Après pop():", ma_liste, ", Élément supprimé:", element_supprime)
+# Utilisation de clear()
+ma_liste.clear()
+print("Après clear():", ma_liste)
+```
+
+```{python}
+# Recréation de la liste pour les autres méthodes
+ma_liste = [3, 1, 4, 2, 2]
+```
+
+```{python}
+# Utilisation de index()
+index_de_4 = ma_liste.index(4)
+print("Index de 4:", index_de_4)
+
+# Utilisation de count()
+compte_de_2 = ma_liste.count(2)
+print("Nombre d'occurrences de 2:", compte_de_2)
+
+# Utilisation de sort()
+ma_liste.sort()
+print("Après sort():", ma_liste)
+
+# Utilisation de reverse()
+ma_liste.reverse()
+print("Après reverse():", ma_liste)
+```
+
+* **Parcours de Liste** Le parcours de liste consiste à accéder séquentiellement à chaque élément d'une liste. Cela peut être fait de différentes manières, mais les plus courantes sont les boucles ```for``` et ```while```.
+
+    + Boucle ```for``` : La boucle ```for``` est la méthode la plus couramment utilisée pour parcourir une liste. Elle permet de traiter chaque élément individuellement.
+    + ```List Comprehension``` : La compréhension de liste est une méthode concise pour créer des listes. Elle permet de transformer une liste en une autre liste, en filtrant les éléments pour former une liste des résultats d'une expression donnée.
+
+La syntaxe de base d'une compréhension de liste est :
+
+```[```nouvelle_expression ```for``` item ```in``` iterable ```if``` condition```]```
+
+* ```nouvelle_expression``` est l'expression qui définit comment mapper les éléments de l'```iterable``` (par exemple, une liste).
+* ```item``` est la variable qui prend la valeur de chaque élément de l'```iterable``` pendant chaque itération.
+* ```condition``` est une condition optionnelle pour filtrer les éléments de l'```iterable```.
+
+```{python}
+# récupérer tous les fruits avec un "a"
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for f in fruits:
+    if "a" in f:
+        newlist.append(f)
+
+print(newlist)
+```
+
+```{python}
+newlist = [f for f in fruits if "a" in f ]
+print(newlist)
+```
+
+```{python}
+nombre = [1, 10, 100]
+nombre_carres = [x**2 for x in nombre]
+nombre_carres
+```
+
+```{python}
+# Créer une liste des carrés des nombres de 0 à 9 :
+carres = [x**2 for x in range(10)]
+```
+```{python}
+# Filtrer les nombres pairs dans une liste :
+nombres_pairs = [x for x in range(10) if x % 2 == 0]
+```
+```{python}
+# Appliquer une fonction à tous les éléments :
+noms_majuscules = [nom.upper() for nom in ["alice", "bob", "charlie"]]
+noms_majuscules
+```
+
+D'autre part, les compréhensions de liste peuvent être écrites de manière équivalente en utilisant une combinaison du constructeur de liste, et/ou map et/ou filter :
+```{python}
+list(map(lambda x: x + 10, [1, 2, 3]))          # Retourne [11, 12, 13]
+list(map(max, [1, 2, 3], [4, 2, 1]))            # Retourne [4, 2, 3]
+list(filter(lambda x: x > 5, [3, 4, 5, 6, 7]))  # Retourne [6, 7]
+```
+
+**Avec des boucles imbriquées**
+
+Voici une boucle for qui aplatit une matrice (une liste de listes) :
+```{python}
+# Définition de la matrice
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]]
+```
+
+```{python}
+flattened = []
+for row in matrix:
+    for n in row:
+        flattened.append(n)
+```
+
+Et voici une compréhension de liste qui fait la même chose :
+```{python}
+flattened = [n for row in matrix for n in row]
+```
+
+Les boucles imbriquées dans les compréhensions de liste ne se lisent pas comme du texte. Une erreur commune est de lire cette compréhension de liste comme suit :
+```{python}
+flattened = [n for n in row for row in matrix]
+```
+
+Mais ce n'est pas correct ! Nous avons inversé les boucles for ici par erreur. La version correcte est celle ci-dessus. Lorsque vous travaillez avec des boucles imbriquées dans les compréhensions de liste, rappelez-vous que les clauses ```for``` restent dans le même ordre que dans nos boucles ```for``` originales.
+
+
+### Les tuples
+Les tuples sont :
+
+* Similaires aux listes, mais immuables (non modifiables après création).
+
+* Les éléments sont séparés par des virgules et entourés de parenthèses.
+
+* Exemple : (1, "a", 3.14).
+
+|Avantage | Description | 
+|---------|----------|----------|
+|Sécurité des données | Parfait pour protéger les données contre les modifications | 
+|Performance | Plus rapide à parcourir que les listes | 
+|utilisation en tant queClé de Dictionnaire | Peuvent être utilisés comme clés dans les dictionnaires, contrairement aux listes | 
+|Retour de plusieurs valeurs de fonction | Utilisé pour retourner plusieurs valeurs depuis une fonction | 
+|Stockage de données constantes | Idéaux pour stocker des données qui ne doivent pas être modifiées | 
+
+```{python}
+# Définition d'un tuple
+mon_tuple = (1, "a", 3.14)
+mon_tuple
+```
+
+```{python}
+un_autre_tuple = 2, "b", 4.28
+un_autre_tuple
+```
+
+```{python}
+mon_tuple[1] 
+```
+
+```{python}
+# Tuple à Un Élément
+tuple_singleton = 5,
+tuple_singleton
+```
+
+```{python}
+# Tuple à Un Élément
+tuple_singleton = (5,)
+
+# Imbrication
+tuple_imbrique = (1, (2, 3), (4, 5))
+
+# Méthodes Utiles
+```
+
+```{python}
+longueur = len(mon_tuple)  # Retourne la longueur de mon_tuple, ici 3
+longueur
+``` 
+
+```{python}
+compteur = mon_tuple.count("a")  # Compte le nombre de fois que 1 apparaît dans mon_tuple, ici 1
+compteur
+```
+
+```{python}
+indice = mon_tuple.index("a")  # Trouve l'indice de "a" dans mon_tuple, ici 1
+indice
+```
+
+```{python}
+# L'affectation n'est pas possible
+# mon_tuple[1] = "b"
+```
+
+### Les ensembles
+
+Les ensembles sont :
+
+Collections non ordonnées de valeurs uniques.
+Utiles pour les opérations d'ensemble et la recherche de valeurs uniques.
+Mutables, mais chaque élément doit être unique.
+Non-Ordonnés : Les ensembles ne maintiennent pas l'ordre des éléments. Vous ne pouvez donc pas accéder aux éléments par un index.
+Exemple : ```{1, 2, 3}```.
+
+Opérations d'Ensemble
+
+|Opération | Syntaxe | Description | 
+|---------|----------|----------|
+| Union | ```a | b``` | Retourne un nouvel ensemble contenant tous les éléments uniques des ensembles ```a``` et ```b``` | 
+| Intersection | ```a & b``` | Retourne un nouvel ensemble contenant uniquement les éléments communs aux ensembles ```a``` et ```b``` | 
+| Différence | ```a - b``` | Retourne un nouvel ensemble contenant les éléments de ```a``` qui ne sont pas dans ```b``` | 
+| Différence symétrique | ```a ^ b``` | Retourne un nouvel ensemble contenant tous les éléments qui sont dans ```a``` ou ```b```, mais pas dans les deux | 
+| Ajout | ```a.add(x)``` | Ajoute l'élément ```x``` à l'ensemble ```a``` | 
+| Suppression | ```a.remove(x)``` | Supprime l'élément ```x``` de l'ensemble ```a``` ; lève une erreur si ```x``` n'est pas présent | 
+| Suppression (sans erreur) | ```a.discard(x)``` | Supprime l'élément ```x``` de l'ensemble ```a``` si ```x``` est présent ; ne fait rien sinon | 
+
+```{python}
+# Définition des ensembles
+ensemble_a = {1, 2, 3, 4}
+ensemble_b = {3, 4, 5, 6}
+print(ensemble_a, ensemble_b)
+
+# Seule une valeur est représentée
+ensemble_c = {1, 1, 1}
+print(ensemble_c)
+```
+
+```{python}
+# Opérations d'ensemble
+union = ensemble_a | ensemble_b
+intersection = ensemble_a & ensemble_b
+difference_a = ensemble_a - ensemble_b
+difference_b = ensemble_b - ensemble_a
+difference_symetrique = ensemble_a ^ ensemble_b
+
+# Affichage des résultats
+print("Union :", union)
+print("Intersection :", intersection)
+print("Différence a :", difference_a)
+print("Différence b :", difference_b)
+print("Différence Symétrique :", difference_symetrique)
+print(ensemble_a)
+```
+
+```{python}
+# Ajout et suppression
+ensemble_a.add(7)
+print("Après ajout :", ensemble_a)
+```
+```{python}
+ensemble_a.remove(1)
+print("Après suppression :", ensemble_a)
+```
+```{python}
+ensemble_a.discard(2)  
+ensemble_a
+```
+
+### Les dictionnaires
+
+Les dictionnaires sont :
+
+* Basés sur des paires clé-valeur.
+* Les valeurs sont accessibles via les clés.
+* Mutables, permettant les mises à jour et les suppressions.
+* Exemple : {"nom": "Alice", "âge": 30}.
+* Utilisation :
+    + **Stockage d'Informations Structurées** : Parfait pour stocker des informations complexes comme des données utilisateur.
+    + **Recherche Rapide** : Utilisez des dictionnaires pour des recherches rapides basées sur des clés uniques.
+
+```{python}
+# Définition d'un dictionnaire
+personne = {"nom": "Alice", "age": 30}
+autre_dict = dict(nom="Bob", age=25)
+```
+```{python}
+personne
+```
+```{python}
+# Ajout et Mise à Jour
+personne["profession"] = "Développeur"
+personne
+```
+```{python}
+# Mise à Jour de plusieurs clés
+personne.update([('nom', "Romain"), ('profession', "Data Scientist")])
+personne
+```
+```{python}
+# Utilisation de keys()
+cles = personne.keys()
+print("Clés:", cles)
+
+# Utilisation de values()
+valeurs = personne.values()
+print("Valeurs:", valeurs)
+
+# Utilisation de items()
+paires = personne.items()
+print("Paires clé-valeur:", paires)
+```
+```{python}
+# Utilisation de get()
+nom_personne = personne.get("nom") 
+age_personne = personne.get("age")
+
+nom_personne, age_personne
+```
+```{python}
+ville = personne.get("ville")
+ville
+```
+```{python}
+ville = personne.get("ville", "Non spécifiée")  # Retourne 'Non spécifiée' car 'ville' n'existe pas
+print("Ville:", ville)
+```
+```{python}
+# Parcours des clés
+print("\nParcours des clés:")
+for cle in personne.keys():
+    print(cle)
+
+# Parcours des valeurs
+print("\nParcours des valeurs:")
+for valeur in personne.values():
+    print(valeur)
+
+# Parcours des paires clé-valeur
+print("\nParcours des paires clé-valeur:")
+for cle, valeur in personne.items():
+    print(cle, ":", valeur)
+```
+```{python}
+print("\nParcours des paires clé-valeur avec enumerate:")
+for index, (cle, valeur) in enumerate(personne.items()):
+    print(f"Index {index}: Clé = {cle}, Valeur = {valeur}")
+```
+```{python}
+personne
+```
+```{python}
+# Suppression
+del personne["age"]
+```
+```{python}
+personne
+```
+```{python}
+profession = personne.pop("profession")
+```
+```{python}
+profession
+```
+```{python}
+personne
+```
+
+**Dictionary Comprehensions**
+
+Ces dernières sont similaires aux compréhensions de listes, mais vous permettent de construire facilement des dictionnaires.
+
+Par exemple, considérez une boucle for qui crée un nouveau dictionnaire en échangeant les clés et les valeurs de l'original :
+```{python}
+flipped = {}
+original = {"a": 0, "b": 5, "c": 6, "d": 7, "e": 11, "f": 19}
+for key, value in original.items():
+    flipped[value] = key
+
+flipped
+```
+
+Le même code écrit sous forme d'une Dictionary Comprehensions :
+
+```{python}
+flipped = {value: key for key, value in original.items()}
+```
+
+Autre exemple :
+```{python}
+nums = [0, 1, 2, 3, 4]
+even_num_to_square = {x: x ** 2 for x in nums if x % 2 == 0}
+print(even_num_to_square) 
+```
+
+## Fonctions : définition et rappel
+
+**Qu'est-ce qu'une Fonction ?**
+Une fonction est une suite d'instructions que l'on peut appeler avec un nom. En programmation, une fonction est comme une petite "machine" qui prend des entrées (arguments), effectue certaines opérations, et parfois retourne une sortie (valeur de retour).
+
+* **Explication de ce qu'est une fonction en programmation**
+, une fonction est définie en utilisant le mot-clé ```def```, suivi du nom de la fonction, des parenthèses ```()``` contenant des paramètres (si nécessaires), et un bloc d'instructions indenté.
+
+* **L'importance des fonctions pour réduire la répétition de code**
+Les fonctions sont essentielles pour éviter la répétition de code. Au lieu d'écrire le même code plusieurs fois, une fonction nous permet de regrouper ce code et de l'appeler quand nécessaire. Cela rend le code plus court, plus lisible et plus facile à maintenir.
+
+**Pourquoi Utiliser des Fonctions ?**
+Les fonctions sont un outil fondamental pour plusieurs raisons :
+
+* **Simplification du code**
+En regroupant des opérations complexes en fonctions, on simplifie notre code principal. Cela le rend plus lisible et plus facile à comprendre.
+
+* **Réutilisabilité**
+Une fois que vous avez écrit une fonction, vous pouvez l'utiliser autant de fois que nécessaire. Cela élimine le besoin de réécrire le même code, économisant du temps et réduisant les erreurs.
+
+* **Meilleure organisation du code**
+Les fonctions aident à structurer le code en unités logiques. Chaque fonction a un objectif spécifique, ce qui facilite la compréhension du programme dans son ensemble. De plus, cela facilite le débogage et le test de parties spécifiques du code.
+
+Voici le développement de la section "Syntaxe de Base des Fonctions" avec des explications et des exemples, rédigé en Markdown :
+
+**Définition d'une Fonction**
+, la définition d'une fonction commence par le mot-clé def, suivi du nom de la fonction, des parenthèses (), et d'un bloc d'instructions indenté.
+
+```{python}
+def ma_fonction():
+    print("Ceci est une fonction.")
+```
+
+Dans cet exemple, ```ma_fonction``` est le nom de notre fonction. Le bloc d'instructions qui suit définit ce que la fonction fait lorsqu'elle est appelée. Ici, la fonction affiche simplement un message.
+
+La définition d'une fonction permet de regrouper un ensemble d'instructions que vous souhaitez exécuter à plusieurs reprises. Elle n'est exécutée que lorsque la fonction est appelée.
+
+* **Structure de base**
+La structure de base d'une fonction comprend :
+
+Le mot-clé ```def```.
+Le nom de la fonction.
+Les parenthèses ```()``` (avec des paramètres si nécessaire).
+Un bloc d'instructions indenté.
+
+* **Appel d'une Fonction**
+
+Une fois qu'une fonction est définie, elle peut être appelée en utilisant son nom suivi de parenthèses.
+```{python}
+ma_fonction()
+```
+
+Cet appel exécute les instructions définies dans ```ma_fonction```.
+
+* **Paramètres et Arguments**
+Les fonctions peuvent être plus flexibles lorsqu'elles prennent des paramètres. Les paramètres agissent comme des variables dans la définition de la fonction.
+
+```{python}
+def ma_fonction(param1, param2):
+    print(f"Paramètre 1 : {param1}, Paramètre 2 : {param2}")
+def saluer(nom):
+    print(f"Bonjour, {nom}!")
+```
+
+Ici, ```nom``` est un paramètre de la fonction ```saluer```. Lorsque la fonction est appelée, elle s'attend à recevoir une valeur pour ce paramètre.
+
+* **Appel d'une Fonction avec Arguments**
+Lorsque vous appelez une fonction qui a des paramètres, vous devez fournir des arguments correspondants.
+
+saluer("Alice")
+Dans cet appel, ```"Alice"``` est un argument qui est passé à la fonction ```saluer```. La fonction utilisera la valeur de cet argument lors de son exécution.
+
+Exemples :
+```{python}
+def saluer(nom):
+    print(f"Bonjour, {nom}!")
+```
+```{python}
+saluer(nom = "Paul")
+saluer(nom = "Ményssa")
+saluer(nom = "Kévin")
+saluer(nom = "Axel")
+```
+```{python}
+def affiche_message(message):
+    print(f"Message reçu : {message}")
+
+affiche_message("Bonjour, ca  va ?")
+affiche_message("Python c'est cool!")
+```
+```{python}
+def additionner(a, b):
+    somme = a + b
+    print(f"La somme de {a} et {b} est {somme}")
+```
+```{python}
+additionner(a = 5, b = 3)
+additionner(5, 3)
+```
+```{python}
+additionner(b = 10, a = 67)
+```
+```{python}
+def division(a, b):
+    quotient = a / b
+    print(f"Le quotient de {a} et {b} est {quotient}")
+
+
+division(a = 5, b = 3)
+division(b = 3, a = 5)
+
+division(3, 5)
+division(5, 3)
+```
+```{python}
+def puissance(base, exposant):
+    resultat = base ** exposant
+    print(f"{base} élevé à la puissance {exposant} est égal {resultat}")
+    
+puissance(exposant = 2, base =  3)
+```
+
+### Les paramètres et arguments
+
+Les paramètres de fonction sont des variables spécifiées dans la définition d'une fonction. Ils agissent comme des placeholders pour les valeurs (arguments) que la fonction recevra lorsqu'elle est appelée.
+
+**Différence entre Paramètres et Arguments**
+
+* Paramètres sont les noms donnés aux variables dans la définition de la fonction. Ils sont utilisés dans la fonction pour se référer aux valeurs qui seront passées lors de l'appel de la fonction.
+
+* Arguments sont les valeurs réelles passées à la fonction lorsqu'elle est appelée. Ces valeurs sont affectées aux paramètres correspondants de la fonction.
+
+**Valeurs par Défaut des Paramètres**
+Les fonctions peuvent avoir des paramètres avec des valeurs par défaut. Ces valeurs sont utilisées si aucun argument correspondant n'est fourni lors de l'appel de la fonction.
+
+```{python}
+def ma_fonction(param1, param2=42):
+    print(f"Paramètre 1 : {param1}, Paramètre 2 : {param2}")
+```
+
+Dans cet exemple, ```param2``` a une valeur par défaut de ```42```. Si ```ma_fonction``` est appelée sans un second argument, param2 utilisera cette valeur par défaut.
+
+Les valeurs par défaut rendent les fonctions plus flexibles et permettent d'éviter des erreurs si certains arguments ne sont pas essentiels. Voici un exemple d'appel de la fonction avec et sans le second argument :
+
+```{python}
+ma_fonction("test")         # Utilise la valeur par défaut pour param2
+ma_fonction("test", 24)     # Remplace la valeur par défaut de param2
+def ma_fonction(param1, param2=42):
+    print(f"Paramètre 1 : {param1}, Paramètre 2 : {param2}")
+```
+```{python}
+ma_fonction(2)
+```
+```{python}
+ma_fonction(2, 30)
+```
+
+### Les types de fonctions
+
+Il existe deux types principaux de fonctions : celles qui retournent une valeur et celles qui ne retournent rien.
+
+- **Fonctions avec Retour** : Une fonction avec retour renvoie une valeur à l'endroit où elle est appelée. 
+Ce retour est effectué en utilisant le mot-clé `return`.
+- **Fonctions sans Retour**: Les fonctions sans retour effectuent des actions mais ne renvoient aucune valeur.
+ Elles sont souvent utilisées pour effectuer une tâche, comme afficher un message ou modifier des données.
+
+```{python}
+def ma_fonction():
+    return "valeur retournée"
+```
+
+Cette fonction retourne la chaîne de caractères ```"valeur retournée"```. Lorsqu'elle est appelée, on peut récupérer cette valeur :
+```{python}
+resultat = ma_fonction()
+print(resultat)  # Affiche "valeur retournée"
+def ma_fonction():
+    print("Fonction exécutée")
+```
+
+Cette fonction affiche un message mais ne retourne rien. L'appel de cette fonction se concentre sur l'effet produit (ici, l'affichage) plutôt que sur une valeur retournée.
+```{python}
+def divison_par_deux(a, b = 2):
+    print( a / b )
+
+resultat = divison_par_deux(5)
+print(resultat)
+```
+```{python}
+def divison_par_deux(a, b = 2):
+    return a / b
+
+resultat = divison_par_deux(5)
+print(resultat)
+```
+```{python}
+def carre(nombre):
+    return nombre * nombre
+
+resultat = carre(4)
+print(resultat)  # Affichera 16
+
+
+def celsius_en_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+temperature_fahrenheit = celsius_en_fahrenheit(0)
+print(temperature_fahrenheit)  # Affichera 32
+
+def est_pair(nombre):
+    return nombre % 2 == 0
+
+resultat = est_pair(10)
+print(resultat)  # Affichera True
+
+def maximum(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+```
+```{python}
+max_nombre = maximum(10, 20)
+print(max_nombre)  # Affichera 20
+```
+
+
+### La portée des variables
+
+La portée d'une variable détermine où dans le code elle est accessible. En Python, les variables peuvent avoir une portée locale ou globale.
+
+```{python}
+x = "global"  # Variable globale
+x
+```
+
+```{python}
+def ma_fonction():
+    x = "local"  # Variable locale
+    print(x)
+
+ma_fonction()
+x
+```
+
+Les variables globales sont utiles pour partager des données entre différentes parties d'un programme.
+
+Cependant, il faut les utiliser avec prudence pour éviter des problèmes de conception.
+
+```{python}
+# le mot-clé `global` est utilisé pour modifier la variable globale
+#  `z` à l'intérieur de la fonction `modifier_globale`.
+
+z = 10
+
+def modifier_globale():
+    global z
+    z = 20
+
+print(z)  # Affiche 10
+modifier_globale()
+print(z)  # Affiche 20
+```
+```{python}
+# Les arguments mot-clé permettent de passer des arguments
+#  à une fonction en spécifiant le nom du paramètre.
+def ma_fonction(nom, age):
+    print(f"Nom : {nom}, Âge : {age}")
+
+ma_fonction(age=25, nom="Alice")
+```
+
+### Nombre variable d'arguments
+Vous pouvez créer des fonctions qui acceptent un nombre variable d'arguments grâce à ```*args``` pour les listes et ```**kwargs``` pour les dictionnaires de mots-clés.
+
+```{python}
+def multiplication(a, b, c=None, d=None, e=None, f=None):
+    return a * b
+
+multiplication(2, 3)
+```
+```{python}
+import numpy as np
+# arguments arbitraire on ne connait pas le nombre de parametre à l'avance
+def multiplication(*nombre):
+    res = np.prod(nombre)
+    return res
+```
+```{python}
+multiplication(4, 3, 4, 90)
+```
+```{python}
+def multiplication(*nombre):
+    print(nombre[0]*nombre[1]*nombre[2]*nombre[3])
+```
+```{python}
+multiplication(4, 3, 4, 90)
+def param_args(*parametres):
+    print(parametres[0]*parametres[1])
+    print(f"Message : {parametres[2]}")
+    
+param_args(2, 3, "Salut!")
+```
+```{python}
+def nombre_args(*args):
+    return len(args)
+args_tuple = (5, 6, 8, 9)
+nombre_args(*args_tuple) # mettre etoile pour le tuple
+```
+```{python}
+# pratique pour définir des clé d'arguments
+def nombre_kwarg(**nombre):
+    print('Mon age est : ' + nombre['age'] + ' ans' + ' et ma taille est : ' + nombre["taille"] + ' metres')
+
+nombre_kwarg(age  = '15', taille = '1.65', profession = " Dev")
+```
+```{python}
+# `args` est un tuple contenant tous les arguments positionnels
+# `kwargs` est un dictionnaire contenant tous les arguments nommés.
+
+def ma_fonction(*args, **kwargs):
+    print("args:", args)
+    print("kwargs:", kwargs)
+
+ma_fonction(1, 2, 3, nom="Alice", age=25)
+```
+
+* **Bonnes Pratiques** Nommer clairement vos fonctions est crucial pour la lisibilité et la maintenabilité de votre code. Les noms de fonctions doivent être descriptifs et refléter ce qu'ils font.
+    +  Utilisez des noms descriptifs.
+    + Privilégiez les verbes pour les fonctions effectuant des actions.
+    + Évitez les abréviations non évidentes. Documenter vos fonctions avec des **docstrings**, aide d'autres programmeurs (et vous-même dans le futur) à comprendre rapidement ce que fait votre fonction.
+
+```{python}
+def ma_fonction():
+    """
+    Description de ce que fait la fonction.
+    Peut inclure des détails sur les paramètres et la valeur de retour.
+    """
+    # corps de la fonction
+```
+
+Les docstrings sont placées juste sous la définition de la fonction et sont entourées de triples guillemets.
+
+```{python}
+# fonction qui renvoie un nombre à la puissance
+def nombre_puissance(nombre, puissance): 
+    # documenter le code
+    """
+    cette fonction calcule un nombre à la puissance et retourne le résultat.    
+    Parameters:    
+    nombre    (int): le premier nombre 
+    puissance (int): le deuxième nombre    
+    Returns   (int): le resultat nombre a la puissance     
+    
+    """
+    return nombre ** puissance
+```
+
+##### Intéraction avec un utilisateur
+
+num = int(input("Saississez un nombre entier : "))
+power = int(input("Saississez une puissance : "))
+
+print("Le résultat est :", nombre_puissance(nombre = num, puissance = power))
+
+
+
+### Les fonctions anonymes : lambda
+
+En Python, le mot-clé **lambda** est utilisé pour définir des fonctions anonymes, également appelées fonctions lambda.
+
+Les fonctions lambda sont des fonctions qui ne sont pas définies avec un nom, mais qui peuvent être utilisées dans des expressions ou des fonctions.
+
+Elles sont souvent utilisées dans des situations où une fonction simple est nécessaire pour une tâche spécifique, comme trier une liste ou filtrer des éléments.
+
+```{python}
+c_to_f = lambda x: (x * 9/5) + 32 
+c_to_f(0)
+```
+```{python}
+people = [{'name': 'Alice', 'age': 25}, 
+          {'name': 'Bob', 'age': 30}, 
+          {'name': 'Charlie', 'age': 20}]
+sorted(people, key=lambda x: x['age'])
+```
+```{python}
+ma_liste = ['abcd', 'abc', 'a', 'ab', 'abcde']
+sorted(ma_liste, key=lambda x: len(x))
+```
+```{python}
+carre  = lambda x: x**2
+liste_carre = [carre(nombre) for nombre in [5, 9, 10]]
+liste_carre
+
+liste_carre = [(lambda x: x**2)(nombre) for nombre in [5, 9, 10]]
+liste_carre
+```
+```{python}
+personnes = [
+  {"nom": "Alice", "age": 25},
+  {"nom": "Bob", "age": 30},
+  {"nom": "Charlie", "age": 20},
+]
+
+personnes.sort(key=lambda personne: personne["age"])
+
+print(personnes)
+```
+```{python}
+produits = [
+  {"nom": "Produit 1", "en_stock": True},
+  {"nom": "Produit 2", "en_stock": False},
+  {"nom": "Produit 3", "en_stock": True},
+]
+
+produits_en_stock = list(filter(lambda produit: produit["en_stock"], produits))
+
+print(produits_en_stock) 
+```
+
+
+**Lambda avec Map et Filter**
+Les fonctions map et filter de Python sont presque toujours associées à des expressions lambda. 
+Il est courant de voir des questions sur StackOverflow demandant "qu'est-ce que lambda" répondre avec des exemples de code comme celui-ci :
+```{python}
+numbers = [2, 1, 3, 4, 7, 11, 18]
+
+# Appliquer la fonction map pour obtenir les carrés de chaque élément de numbers
+squared_numbers = map(lambda n: n**2, numbers)
+
+# Appliquer la fonction filter pour obtenir les nombres impairs de numbers
+odd_numbers = filter(lambda n: n % 2 == 1, numbers)
+
+# Afficher les résultats
+print("Squared numbers:", squared_numbers)
+print("Odd numbers:", odd_numbers)
+```
+```{python}
+# Afficher les résultats
+print("Numbers:", numbers)
+print("Squared numbers:", list(squared_numbers))
+print("Odd numbers:", list(odd_numbers))
+```
+
+### Les fonctions et la récursivité
+
+La **récursivité** est un concept fondamental en programmation, et Python est un langage qui le supporte très bien.
+
+La récursivité consiste en une fonction qui s'appelle elle-même dans sa propre définition. Cela peut sembler étrange au début, mais c'est une technique très puissante pour résoudre certains types de problèmes, en particulier ceux qui peuvent être décomposés en problèmes plus petits et similaires.
+
+Voici un exemple simple en Python pour illustrer la récursivité :
+
+def nom():
+    prenom = input("Nom :")
+    if prenom == "Ményssa":
+        return f'ok'
+    else:
+        nom()
+nom()
+
+```{python}
+def countdown(n):
+    if n <= 0:
+        print("Lancement terminé!")
+    else:
+        print(n)
+        countdown(n - 1)
+
+countdown(5)
+```
+
+Dans cet exemple, la fonction ```countdown``` prend un nombre entier ```n``` en paramètre. Si ```n``` est inférieur ou égal à zéro, la fonction affiche "Lancement terminé!". Sinon, elle affiche la valeur actuelle de ```n``` puis appelle elle-même avec ```n - 1```.
+
+La récursivité doit être utilisée avec prudence, car une mauvaise utilisation peut entraîner des erreurs de débordement de pile (stack overflow).
+
+Cela se produit lorsque trop de fonctions récursives sont empilées sur la pile d'appels du programme.
+
+Il est important de s'assurer qu'il y ait un cas de base dans la récursivité, c'est-à-dire une condition qui arrête les appels récursifs.
+
+Sinon, la fonction continuera à s'appeler elle-même indéfiniment.
+
+Voici un exemple plus avancé qui utilise la récursivité pour calculer la somme des éléments d'une liste :
+```{python}
+def recursive_sum(arr):
+    if len(arr) == 0:
+        return 0
+    else:
+        return arr[0] + recursive_sum(arr[1:])
+
+my_list = [1, 2, 3, 4, 5]
+print("La somme des éléments de la liste est:", recursive_sum(my_list))
+```
+
+Dans cet exemple, la fonction ```recursive_sum``` prend une liste en paramètre. Si la liste est vide, elle retourne 0.
+
+Sinon, elle retourne le premier élément de la liste ajouté à la somme des éléments restants, obtenue en appelant récursivement la fonction avec une sous-liste de ```arr``` qui exclut le premier élément.
+
+### Générateurs et décorateurs
+
+Les **générateurs** sont des structures puissantes en Python permettant de créer des itérables de manière efficace et sans consommer beaucoup de mémoire.
+
+Contrairement aux listes, les générateurs produisent des valeurs au fur et à mesure de leur utilisation, ce qui les rend idéaux pour traiter de grandes quantités de données de manière efficace.
+
+* Un générateur est une fonction qui utilise le mot-clé ```yield``` pour renvoyer des valeurs.
+* Lorsqu'une fonction contient ```yield```, elle devient un générateur.
+* Chaque fois que le générateur est appelé, il exécute son code jusqu'à ce qu'il rencontre l'instruction ```yield```.
+* À ce moment-là, il renvoie la valeur spécifiée et se met en pause, en conservant son état.
+* Lorsqu'il est rappelé, il reprend à partir de l'instruction ```yield``` précédente.
+
+```{python}
+def mon_generateur():
+    yield 1
+    yield 2
+    yield 3
+
+# Utilisation du générateur
+gen = mon_generateur()
+
+# Utilisation d'une boucle for pour itérer sur tous les éléments du générateur
+for element in gen:
+    print(element)
+```
+
+Dans cet exemple, chaque yield renvoie une valeur successive à chaque appel de ```next()```.
+
+Lorsque toutes les valeurs ont été renvoyées, le générateur lève une exception ```StopIteration```.
+
+```{python}
+def pairs_infinis():
+    n = 0
+    while True:
+        yield n
+        n += 2
+
+# Utilisation du générateur
+gen = pairs_infinis()
+
+for _ in range(10):
+    print(next(gen)) # Affiche : 0, 2, 4, 6, 8
+```
+```{python}
+def fibonacci(n):
+    sequence = [0, 1]
+    while len(sequence) < n:
+        sequence.append(sequence[-1] + sequence[-2])
+    return sequence
+
+# Utilisation de la fonction
+print(fibonacci(10))  # Affiche les 10 premiers nombres de la séquence Fibonacci
+```
+```{python}
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+# Utilisation du générateur
+gen = fibonacci()
+for _ in range(10):
+    print(next(gen)) # Affiche les 10 premiers nombres de la séquence Fibonacci
+```
+```{python}
+import random
+import string
+
+def chaine_aleatoire(longueur):
+    while True:
+        yield ''.join(random.choices(string.ascii_letters, k=longueur))
+
+# Utilisation du générateur
+gen = chaine_aleatoire(5)
+for _ in range(3):
+    print(next(gen)) # Affiche 3 chaînes de 5 caractères aléatoires
+```
+
+En Python, les **décorateurs** sont des fonctions qui prennent une autre fonction comme argument, ajoutent un comportement supplémentaire à cette fonction, puis la renvoient sans la modifier.
+
+Les décorateurs utilisent généralement la fonction @decorateur juste avant la définition de la fonction à décorer.
+```{python}
+def decorateur(fonction):
+    def fonction_decoration():
+        print("Début de la fonction décorée")
+        fonction()
+        print("Fin de la fonction décorée")
+    return fonction_decoration
+
+@decorateur
+def ma_fonction():
+    print("Corps de ma fonction")
+
+# Utilisation de la fonction décorée
+ma_fonction()
+```
+
+Dans cet exemple, le décorateur decorateur ajoute un comportement d'impression avant et après l'exécution de la fonction ```ma_fonction```.
+
+Les décorateurs peuvent également prendre des arguments. Pour cela, il faut ajouter une couche de fonctionnalité supplémentaire pour accepter ces arguments.
+
+```{python}
+def decorateur_args(argument):
+    def decorateur(fonction):
+        def fonction_decoration():
+            print("Début de la fonction décorée avec l'argument :", argument)
+            fonction()
+            print("Fin de la fonction décorée avec l'argument :", argument)
+        return fonction_decoration
+    return decorateur
+
+@decorateur_args("mon_argument")
+def ma_fonction():
+    print("Corps de ma fonction")
+
+# Utilisation de la fonction décorée
+ma_fonction()
+```
+
+Les décorateurs sont un aspect avancé de Python, mais ils offrent une puissante fonctionnalité pour étendre et modifier le comportement des fonctions et des méthodes de manière flexible et élégante. En comprenant les principes de base des décorateurs et leur utilisation avancée, vous pouvez améliorer la lisibilité, la réutilisabilité et la modularité de votre code Python.
+
+* 1. Les décorateurs peuvent retourner une fonction au lieu de la fonction décorée elle-même, ce qui permet de contrôler davantage le comportement de la fonction.
+
+* 2. Les décorateurs peuvent également être appliqués aux méthodes de classe pour étendre ou modifier le comportement des méthodes.
+
+* 3. Il est possible d'empiler plusieurs décorateurs sur une même fonction pour ajouter plusieurs couches de fonctionnalités.
+
+

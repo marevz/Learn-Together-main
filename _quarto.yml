@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  navbar:
+    tools: 
+      - search: true
+        button_text: Search
+    background: light
+  
+    left: 
+      - text: Introduction
+        file: Python.qmd
+      - text: Les fondamentaux
+        file: Fondamentaux.qmd
+      - text: Gestion des exceptions
+        file: Exceptions.qmd
+      - text: Les bonnes pratiques
+        file: Pratiques.qmd
+      - text: S'entrainer
+        file: Exercices.qmd
+
+metadata:
+  order:
+    - Python.qmd
+    - Fondamentaux.qmd
+
+
+format:
+  html:
+    theme: zephyr
+    css: styles.css
+    toc: true
+
+
+
+

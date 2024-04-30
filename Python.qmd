@@ -1,0 +1,48 @@
+---
+title: "C'est quoi Python ?"
+---
+---
+
+
+   ![ ](images/Logo_python.png)
+
+Essayer de rajouter l'image du créateur
+---
+
+Python est un language de programmation puissant et polyvalent **crée en 1989** par **Guido Van Rossum**, **aux Pays-Bas.**
+C'est en profitant d'une semaine de vacances durant les fêtes de Noël, qu'il utilise son ordinateur pour écrire la première version du language. Il décida d'appeler son language ainsi, reliant sa série favorite : Monty Python's Flying Circus.
+
+
+**Caractéristiques**
+
+Ce language possède de nombreux avantages :
+
+* Il est gratuit : possibilité d'être télécharger sur autant de postes que vous souhaitez, ainsi que votre téléphone ;
+
+* Il est multiplateforme : fonctionne sur plusieurs systèmes d'exploitation (Windows, Mac OS X, Linux, Android, iOS, depuis les mini-ordinateurs Raspberry Pi jusqu’aux supercalculateurs.) ;
+
+* Il est facile d'intégration à toute une sélection d'autres languages de programmation fréquemment utilisés, tels que Ruby, C, Java et PHP ;
+
+* Il est orienté objet : permet de créer des entités virtuelles qui répresentent des objets du monde réel, comme une cellule, une protéine ou un atôme, avec leurs propres règles de fonctionnement et dintéractions ;
+
+* Il bénéficie d'une large communauté active et variée. Pour t'aider dans tes challenges techniques, tu aura de multiples plateformes ou blog à ta disposition ;
+
+* Il est relativement simple à prendre en main du fait que même les débutants en programmation peuvent l'utiliser.
+
+Enfin, Python est un language qui ne veillit pas. 
+Les développeurs mettent à jour le language et développe de nouvelles fonctionnalités régulièrement.
+Tu peux te référer à la documentation officielle du site *https://www.python.org* .
+
+A contrario, la faiblesse de Python reste sa lenteur, comparé à Java ou C, Python demande plus de temps d'exécution.
+
+**L'indentation**
+
+Dans Python, l'indentation est une importance capitale permettant de délimiter les blocs de code.
+Il est conventionnel d'utiliser quatre espaces pour l'indentation, plutôt que des tabulations.
+
+
+
+
+
+
+
