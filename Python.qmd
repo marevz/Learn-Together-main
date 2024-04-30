@@ -12,8 +12,8 @@ Essayer de rajouter l'image du créateur
 Python est un language de programmation puissant et polyvalent **crée en 1989** par **Guido Van Rossum**, **aux Pays-Bas.**
 C'est en profitant d'une semaine de vacances durant les fêtes de Noël, qu'il utilise son ordinateur pour écrire la première version du language. Il décida d'appeler son language ainsi, reliant sa série favorite : Monty Python's Flying Circus.
 
-MAREVA
-**Caractéristiques**
+
+<u>**Caractéristiques :**</u>
 
 Ce language possède de nombreux avantages :
 
