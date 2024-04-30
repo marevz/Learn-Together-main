@@ -20,10 +20,6 @@ website:
       - text: S'entrainer
         file: Exercices.qmd
 
-metadata:
-  order:
-    - Python.qmd
-    - Fondamentaux.qmd
 
 
 format:

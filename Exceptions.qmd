@@ -9,74 +9,17 @@ title: "Gestion des exceptions"
 Voici quelques **exemples d'exceptions** fréquemment rencontrées :
 
 * ```IndexError``` : Se produit lorsqu'on tente d'accéder à un index qui n'existe pas dans une séquence (comme une liste ou un tuple).
-```
-ma_liste = ["A", 3, "serpent"]
-element = ma_liste[5]  # IndexError car l'index 5 n'existe pas dans une liste de taille 3
-```
 
 * ```ValueError``` : Apparaît lorsqu'une fonction reçoit un argument de type correct mais d'une valeur inappropriée.
-```
-nombre = int("123373829173487472474")
-nombre
-```
-
-```
-nombre = int("abc")  # ValueError car "abc" ne peut pas être converti en entier
-```
 
 * ```TypeError``` : Se produit lorsqu'une opération ou fonction est appliquée à un objet d'un type inapproprié.
-```
-somme = 10 + 5 
-somme
-```
-
-```
-"message" + " : voici mon texte" 
-```
-
-```
-somme = "texte" + 5  # TypeError car on ne peut pas ajouter une chaîne de caractères et un entier
-```
-
-```
-somme = 5  + "5"
-```
 
 * ```FileNotFoundError``` : Levée lorsqu'une tentative de lecture d'un fichier échoue parce que le fichier n'existe pas.
 
-```
-# with open("../data/Orgueil_et_Prejuges.txt", "r", encoding = 'utf-8') as fichier:
-#     contenu = fichier.read()  
-
-# print(contenu)
-```
-
-```
-with open("fichier_inexistant.txt", "r") as fichier:
-    contenu = fichier.read()  # FileNotFoundError si "fichier_inexistant.txt" n'existe pas
-```
-
 * ```ZeroDivisionError``` : Se produit lorsqu'une division par zéro est tentée.
-
-```
-resultat = 10 / 0  # ZeroDivisionError car on ne peut pas diviser par zéro
-```
 
 * ```NameError``` : Se produit lorsqu'une variable n'est pas définie dans le contexte actuel.
 
-```
-def ma_fonction():
-    variable_a_afficher = "Bonjour"
-    print(variable_a_afficher)
-
-ma_fonction()
-ma_fonction()
-ma_fonction()
-```
-
-```
-print(variable_a_afficher)  # NameError car 'variable_a_afficher' n'est pas définie en dehors de la fonction
-```
 
 ## Traitement des exceptions
 
@@ -91,180 +34,7 @@ print(variable_a_afficher)  # NameError car 'variable_a_afficher' n'est pas déf
 
 La syntaxe de base pour la gestion des exceptions en Python utilise les instructions ```try``` et ```except```.
 
-Voici un exemple simple :
-
-```
-try:
-    # Bloc de code à essayer
-    result = 10 / 0
-except ZeroDivisionError:
-    # Ce bloc est exécuté en cas d'erreur ZeroDivisionError
-    print("Division par zéro !")
-```
-
-Dans cet exemple, si le code dans le bloc try cause une ZeroDivisionError, le programme ne s'arrêtera pas. Au lieu de cela, il exécutera le code dans le bloc except.
-
-```
-result = 10 / 0
-```
-
-```
-try:
-    # Bloc de code à essayer
-    result = 10 / 0
-except ZeroDivisionError:
-    # Ce bloc est exécuté en cas d'erreur ZeroDivisionError
-    print("Division par zéro !")
-```
-
-```
-def gestion_index_error(liste, index):
-    try:
-        return liste[index]
-    except IndexError as e:
-        return f"Ce n'est pas possible, Erreur d'index  : {e}"
-
-# Test
-ma_liste = ["A", 3, "serpent"]
-print(gestion_index_error(ma_liste, 1))
-print(gestion_index_error(ma_liste, 5))
-```
-
-```
-def conversion_en_entier(entree):
-    try:
-        return int(entree)
-    except ValueError as e:
-        return f"La conversion n'est pas possible, Erreur de valeur : {e}"
-
-# Test
-val_entree = "190"
-print(conversion_en_entier(val_entree))
-val_entree = "Robert"
-print(conversion_en_entier(val_entree))
-```
-
-```
-def additionner(a, b):
-    try:
-        return a + b
-    except TypeError as e:
-        return f"Erreur de type : {e}"
-
-# Test
-print(additionner(2, 5))
-print(additionner("texte", 5))
-```
-
-``` 
-def lire_fichier(nom_fichier):
-    try:
-        with open(nom_fichier, "r", encoding = 'utf-8') as fichier:
-            return fichier.read()
-    except FileNotFoundError as e:
-        return f"Erreur de fichier non trouvé : {e}"
-
-# Test
-# data = lire_fichier("../data/Orgueil_et_Prejuges.txt")
-# print(data)
-
-data = lire_fichier("../data/fichier_inexistant.txt")
-print(data)
-```
-
-```
-def diviser(a, b):
-    try:
-        return a / b
-    except ZeroDivisionError as e:
-        return f"Erreur de division par zéro : {e}"
-
-# Test
-print(diviser(10, 0))
-```
-
-```
-def acceder_variable(nom_variable):
-    try:
-        return eval(nom_variable) # renvoie contenu de la variable
-    except NameError as e:
-        return f"Erreur de nom : {e}"
-
-# Test   
-print(acceder_variable("val_entree")) 
-print(acceder_variable("variable_inexistante"))
-```
-
-```
-def conversion_en_entier(chaine):
-    try:
-        return int(chaine)
-    except ValueError as e:
-        return f"Erreur de valeur : {e}"
-
-def additionner(a, b):
-    try:
-        return a + b
-    except TypeError as e:
-        return f"Erreur de type : {e}"
-
-def convertir_et_additionner(chaine1, chaine2):
-    valeur1 = conversion_en_entier(chaine1)
-    valeur2 = conversion_en_entier(chaine2)
-
-    # Vérification si les conversions se sont bien passées
-    if isinstance(valeur1, int) and isinstance(valeur2, int):
-        return additionner(valeur1, valeur2)
-    else:
-        # Retourne les messages d'erreur si la conversion a échoué
-        return valeur1 if isinstance(valeur1, str) else valeur2
-
-# Test
-print(convertir_et_additionner("3", "4"))  
-print(convertir_et_additionner(3.8, "4"))  
-# print(convertir_et_additionner("a", "4"))
-```
-
 Vous pouvez avoir plusieurs blocs ```except``` pour gérer différents types d'exceptions. Cela permet de réagir de manière appropriée à différentes erreurs qui peuvent survenir.
-
-
-```
-try:
-    # Tentative d'exécution de code
-    ...
-except TypeError:
-    # Gestion de TypeError
-    ...
-except ValueError:
-    # Gestion de ValueError
-    ...
-```
-
-```
-def operation_complexe(a, b, c):
-    try:
-        resultat = (a + b) / c
-        return resultat
-    except TypeError as e:
-        return f"Erreur de type : {e}"
-    except ZeroDivisionError as e:
-        return f"Erreur de division par zéro: {e}"
-    except Exception as e:
-        return f"Autre erreur : {e}"
-
-# Exemple d'utilisation
-
-print(operation_complexe(1, 3, 2))  
-print(operation_complexe(1, 2, 0))  
-print(operation_complexe(1, "deux", 3))
-```
-
-
-Dans cet exemple, la fonction ```operation_complexe``` essaie d'effectuer une opération qui peut lever plusieurs types d'exceptions :
-
-* ```TypeError``` si ```a```, ```b```, ou ```c``` n'est pas un nombre.
-* ```ZeroDivisionError``` si ```c``` est zéro.
-* ```Exception``` comme un filet de sécurité pour attraper d'autres types d'exceptions inattendues.
 
 L'utilisation de plusieurs blocs ```except``` permet de donner des réponses spécifiques à chaque type d'erreur, améliorant ainsi la lisibilité et la maintenance du code.
 
@@ -274,127 +44,16 @@ Le bloc ```finally``` en Python est utilisé pour définir des actions qui doive
 
 Ce bloc est souvent utilisé pour des opérations de nettoyage qui doivent s'exécuter dans tous les cas, comme la fermeture de fichiers ou la libération de ressources externes.
 
-```
-def calculer_division(a, b):
-    try:
-        resultat = a / b
-        return resultat
-    except ZeroDivisionError:
-        return "Une division par zéro a été tentée."
-    finally:
-        print("Opération terminée (réussie ou non).")
-        return a + b
-
-# Exemple d'utilisation
-print(calculer_division(10, 2))  # Pas d'erreur, affiche le résultat et le message de finally
-print(calculer_division(10, 0))  # Attrape ZeroDivisionError, affiche le message d'erreur et le message de finally
-```
-
-```
-def exemple_finally():
-    try:
-        fichier = open("../data/Orgueil_et_Prejuges.txt", "r")
-        contenu = fichier.read()
-        return contenu
-    except FileNotFoundError as e:
-        return f"Erreur : {e}"
-    finally:
-        fichier.close()
-        print("Fichier fermé.")
-
-# Exemple d'utilisation
-print(exemple_finally())
-```
-
 
 ### Else
 
 Utilisez ```else``` lorsque vous avez besoin d'exécuter du code qui ne doit s'exécuter que si le bloc ```tr```v s'est exécuté sans erreur, mais avant d'exécuter le code dans le bloc ```finally```.
 
-```
-def exemple_else(chaine):
-    try:
-        num = int(chaine)
-    except ValueError:
-        return "Ce n'est pas un nombre valide."
-    else:
-        return f"Conversion réussie : {num}"
-
-# Exemple d'utilisation
-print(exemple_else("1233717237"))
-print(exemple_else("abc"))
-```
-
-```
-def division_avec_verification(a, b):
-    try:
-        resultat = a / b
-    except ZeroDivisionError:
-        return "Une division par zéro a été tentée."
-    else:
-        if resultat > 50:
-            return "Le résultat est étonnamment grand."
-    finally:
-        print("Opération de division terminée (réussie ou non).")
-```
-
-```
-# Exemple d'utilisation
-print(division_avec_verification(1000, 10))  # Division réussie, vérification dans 'else', puis 'finally'
-```
-
-```
-print(division_avec_verification(10, 0))    # Attrape ZeroDivisionError, puis exécute 'finally'
-```
 
 ## Assertions
 L'instruction ```assert``` est utilisée pour tester si une condition est vraie. Si la condition est fausse, ```AssertionError``` est levée.
 
 Les assertions sont principalement utilisées comme un moyen de débogage, pour vérifier des conditions internes, tandis que les exceptions sont utilisées pour gérer des erreurs et des conditions exceptionnelles dans le flux normal du programme.
-
-```
-def diviser_par_deux(n):
-    assert n % 2 == 0, "Le nombre doit être pair."
-    return n / 2
-```
-
-```
-# Exemple d'utilisation
-print(diviser_par_deux(10))  # Fonctionne bien
-```
-
-```
-print(diviser_par_deux(3))  # Déclenche AssertionError
-```
-
-```
-def ma_fonction(x):
-  assert isinstance(x, int), "La variable doit être un nombre entier"
-  # ...
-
-ma_fonction(10)  # OK
-ma_fonction("toto")  # Assertion error
-```
-
-```
-def ma_fonction(x):
-  assert x > 0, "La variable doit être positive"
-  # ...
-
-ma_fonction(5)  # OK
-ma_fonction(-1)  # Assertion error
-```
-
-```
-def ma_fonction(x, y):
-  assert x != y, "Les deux variables doivent être différentes"
-  # ...
-
-try:
-  ma_fonction(10, 10)
-except AssertionError:
-  print("Les deux variables sont identiques")
-```
 
 
 ## Raise
@@ -403,55 +62,6 @@ L'instruction ```raise``` en Python est un outil crucial pour la gestion des exc
 
 Les exceptions levées avec ```raise``` peuvent être capturées et gérées en amont, permettant aux développeurs de réagir de manière appropriée aux différents types de problèmes qui peuvent survenir, améliorant ainsi la robustesse et la fiabilité du code.
 
-Dans l'exemple suivant, si ```set_age``` est appelée avec un âge négatif, une ```ValueError``` est levée, indiquant que l'âge ne peut pas être négatif.
-
-```
-def set_age(age):
-    if age < 0:
-        raise ValueError("L'âge ne peut pas être négatif.")
-    print(f"Âge défini à {age} ans.")
-
-try:
-    set_age(-10)
-except ValueError as e:
-    print(e)
-```
-
-Ici, diviser lève une ```ZeroDivisionError``` si le diviseur (```b```) est zéro. Cela empêche l'exécution d'une division par zéro, ce qui entraînerait une erreur en Python.
-
-```
-def diviser(a, b):
-    if b == 0:
-        raise ZeroDivisionError("Le diviseur ne peut pas être zéro.")
-    return a / b
-
-try:
-    resultat = diviser(10, 0)
-except ZeroDivisionError as e:
-    print(e)
-``` 
-
-```
-def ma_fonction(x):
-  if x < 0:
-    raise ValueError("La variable doit être positive")
-  # ...
-
-ma_fonction(10)  # OK
-ma_fonction(-1)  # ValueError: La variable doit être positive
-```
-
-```
-def ma_fonction(x):
-  try:
-    y = 1 / x
-  except ZeroDivisionError:
-    raise ValueError("La variable ne peut pas être égale à 0")
-  # ...
-
-ma_fonction(10)  # OK
-ma_fonction(0)  # ValueError: La variable ne peut pas être égale à 0
-```
 
 ## **En résumé**
 
