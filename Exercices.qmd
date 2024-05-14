@@ -1,1 +1,220 @@
 <iframe src="Exercices/example.html"width="800px"height="600px"></iframe>
+
+
+
+
+
+## LEs méthodes des listes
+Faire des exercices sur les listes : 
+|Méthode | Description | Exemple | 
+|---------|----------|----------|
+|```append()``` | Ajoute un élément à la fin de la liste | ```list.append(8)``` | 
+|```extend()``` | Étend la liste en ajoutant tous les éléments d'une autre liste | ```list.extend([9, 12])``` | 
+|```insert()``` | Insère un élément à une position donnée| ```liste.insert(4, d)``` | 
+|```remove()``` |Supprime la première occurrence d'un élément | ```liste.remove('d')```| 
+|```pop()``` | Supprime et renvoie un élément à une position donnée (par défaut ,le dernier) | ```liste.pop()```| 
+|```clear()``` | Supprime tous les éléments de la liste | ```liste.clear()``` | 
+|```index()``` | Retourne l'indice du premier élément correspondant | ```liste.index('d')```| 
+|```count()``` | Compte le nombre d'occurences d'une élément spécifique | ```liste.count(8)``` | 
+|```sort()``` | Trie les élément de la liste (dans un ordre spécifique) | ```liste.sort()```| 
+|```reverse()``` | Inverse l'ordre des éléments de la liste | ```liste.reverse()``` | 
+
+
+```{python}
+# Création d'une liste de base
+ma_liste = [1, 2, 3]
+print(ma_liste)
+```
+
+```{python}
+# Utilisation de append()
+ma_liste.append("quatre")
+print("Après append(quatre):", ma_liste)
+# Utilisation de extend()
+ma_liste.extend([5, 6])
+print("Après extend([5, 6]):", ma_liste)
+# Utilisation de insert()
+ma_liste.insert(1, 'elephant')
+print("Après insert(1, 'elephant'):", ma_liste)
+# Utilisation de remove()
+ma_liste.remove('elephant')
+print("Après remove('elephant'):", ma_liste)
+# Utilisation de pop()
+element_supprime = ma_liste.pop()
+print("Après pop():", ma_liste, ", Élément supprimé:", element_supprime)
+# Utilisation de clear()
+ma_liste.clear()
+print("Après clear():", ma_liste)
+```
+```{python}
+# Recréation de la liste pour les autres méthodes
+ma_liste = [3, 1, 4, 2, 2]
+```
+```{python}
+# Utilisation de index()
+index_de_4 = ma_liste.index(4)
+print("Index de 4:", index_de_4)
+
+# Utilisation de count()
+compte_de_2 = ma_liste.count(2)
+print("Nombre d'occurrences de 2:", compte_de_2)
+
+# Utilisation de sort()
+ma_liste.sort()
+print("Après sort():", ma_liste)
+
+# Utilisation de reverse()
+ma_liste.reverse()
+print("Après reverse():", ma_liste)
+```
+
+
+
+
+
+
+
+* **Parcours de Liste** Le parcours de liste consiste à accéder séquentiellement à chaque élément d'une liste. Cela peut être fait de différentes manières, mais les plus courantes sont les boucles ```for``` et ```while```.
+
+    + Boucle ```for``` : La boucle ```for``` est la méthode la plus couramment utilisée pour parcourir une liste. Elle permet de traiter chaque élément individuellement.
+    + ```List Comprehension``` : La compréhension de liste est une méthode concise pour créer des listes. Elle permet de transformer une liste en une autre liste, en filtrant les éléments pour former une liste des résultats d'une expression donnée.
+
+La syntaxe de base d'une compréhension de liste est :
+
+```[```nouvelle_expression ```for``` item ```in``` iterable ```if``` condition```]```
+
+* ```nouvelle_expression``` est l'expression qui définit comment mapper les éléments de l'```iterable``` (par exemple, une liste).
+* ```item``` est la variable qui prend la valeur de chaque élément de l'```iterable``` pendant chaque itération.
+* ```condition``` est une condition optionnelle pour filtrer les éléments de l'```iterable```.
+
+```{python}
+# récupérer tous les fruits avec un "a"
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for f in fruits:
+    if "a" in f:
+        newlist.append(f)
+
+print(newlist)
+```
+
+```{python}
+newlist = [f for f in fruits if "a" in f ]
+print(newlist)
+```
+
+```{python}
+nombre = [1, 10, 100]
+nombre_carres = [x**2 for x in nombre]
+nombre_carres
+```
+
+```{python}
+# Créer une liste des carrés des nombres de 0 à 9 :
+carres = [x**2 for x in range(10)]
+```
+```{python}
+# Filtrer les nombres pairs dans une liste :
+nombres_pairs = [x for x in range(10) if x % 2 == 0]
+```
+```{python}
+# Appliquer une fonction à tous les éléments :
+noms_majuscules = [nom.upper() for nom in ["alice", "bob", "charlie"]]
+noms_majuscules
+```
+
+
+
+
+
+
+## Parcours de listes
+```{python}
+# récupérer tous les fruits avec un "a"
+fruits = ["poire", "fraise", "kiwi", "pitaya", "mangue"]
+newlist = []
+
+for f in fruits:
+    if "a" in f:
+        newlist.append(f)
+
+print(newlist)
+```
+
+
+
+```{python}
+newlist = [f for f in fruits if "a" in f ]
+print(newlist)
+```
+```{python}
+# Créer une liste des carrés des nombres de 0 à 9 :
+carres = [x**2 for x in range(20)]
+```
+```{python}
+# Filtrer les nombres pairs dans une liste :
+nombres_pairs = [x for x in range(20) if x % 2 == 0]
+```
+```{python}
+# Appliquer une fonction à tous les éléments :
+noms_majuscules = [nom.upper() for nom in ["alice", "bob", "charlie"]]
+noms_majuscules
+```
+
+
+
+
+
+
+
+## Appel d'une fonction avec arguments
+Exemples :
+```{python}
+def saluer(nom):
+    print(f"Bonjour, {nom}!")
+```
+```{python}
+saluer(nom = "Jordan")
+saluer(nom = "Lola")
+saluer(nom = "Mélany")
+saluer(nom = "Kevin")
+```
+```{python}
+def affiche_message(message):
+    print(f"Message reçu : {message}")
+
+affiche_message("Hey, what's up")
+affiche_message("La Programmation c'est cool!")
+```
+```{python}
+def additionner(a, b):
+    somme = a + b
+    print(f"La somme de {a} et {b} est {somme}")
+```
+```{python}
+additionner(a = 5, b = 3)
+additionner(5, 3)
+```
+```{python}
+additionner(b = 10, a = 67)
+```
+```{python}
+def division(a, b):
+    quotient = a / b
+    print(f"Le quotient de {a} et {b} est {quotient}")
+
+
+division(a = 5, b = 3)
+division(b = 3, a = 5)
+
+division(3, 5)
+division(5, 3)
+```
+```{python}
+def puissance(base, exposant):
+    resultat = base ** exposant
+    print(f"{base} élevé à la puissance {exposant} est égal {resultat}")
+    
+puissance(exposant = 2, base =  3)
+```

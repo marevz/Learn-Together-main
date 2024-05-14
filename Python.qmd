@@ -6,7 +6,6 @@ title: "C'est quoi Python ?"
 
    ![ ](images/Logo_python.png)
 
-Essayer de rajouter l'image du créateur
 ---
 
 Python est un language de programmation puissant et polyvalent **crée en 1989** par **Guido Van Rossum**, **aux Pays-Bas.**

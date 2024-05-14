@@ -15,8 +15,6 @@ website:
         file: Fondamentaux.qmd
       - text: Gestion des exceptions
         file: Exceptions.qmd
-      - text: Les bonnes pratiques
-        file: Pratiques.qmd
       - text: S'entrainer
         file: Exercices.qmd
 
