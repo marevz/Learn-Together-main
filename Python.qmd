@@ -34,10 +34,7 @@ Tu peux te référer à la documentation officielle du site *https://www.python.
 
 A contrario, la faiblesse de Python reste sa lenteur, comparé à Java ou C, Python demande plus de temps d'exécution.
 
-**L'indentation**
 
-Dans Python, l'indentation est une importance capitale permettant de délimiter les blocs de code.
-Il est conventionnel d'utiliser quatre espaces pour l'indentation, plutôt que des tabulations.
 
 
 
