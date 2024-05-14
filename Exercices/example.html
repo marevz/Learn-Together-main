@@ -301,97 +301,60 @@
 
 
 
-
-
 <h1>Les conditions</h1>
 <div class="exercise">
   <div class="title">
-    <h2>Vérification de la parité</h2>
-  </div>
-  <div data-datacamp-exercise data-lang="python" data-height="250">
-    <code data-type="pre-exercise-code"># no pec</code>
-    <code data-type="sample-code">
-      # Vérification de la parité
-      number = 10
-      if number % 2 == 0:
-          result = "pair"
-      else:
-          result = "impair"
-
-      # Affiche le résultat
-      print(result)
-    </code>
-    <code data-type="solution">
-      # Vérification de la parité
-      number = 10
-      if number % 2 == 0:
-          result = "pair"
-      else:
-          result = "impair"
-
-      # Affiche le résultat
-      print(result)
-    </code>
-    <code data-type="sct">
-      test_object("result", undefined_msg = "Assurez-vous de définir une variable `result`.", incorrect_msg = "Assurez-vous que `result` contient le bon résultat en fonction de la parité du nombre.")
-      success_msg("Très bien ! Passons à l'exercice suivant.")
-    </code>
-    <div data-type="hint">
-      <p>Utilisez l'opérateur modulo (%) pour vérifier si un nombre est pair ou impair.</p>
-    </div>
-    <div data-type="error-message" data-content="result">
-      <p>Veuillez définir la variable `result`.</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="exercise">
-  <div class="title">
-    <h2>Comparaison de deux nombres</h2>
   </div>
   <div data-datacamp-exercise data-lang="python" data-height="500">
-    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="pre-exercise-code">#no pec
+</code>
     <code data-type="sample-code">
-      # Comparaison de deux nombres
-      num1 = 10
-      num2 = 20
-      if num1 < num2:
-          result = "Le premier nombre est inférieur au deuxième."
-      elif num1 > num2:
-          result = "Le premier nombre est supérieur au deuxième."
-      else:
-          result = "Les deux nombres sont égaux."
+      # Initialisation des variables
+      x = 20
+      y = 40
+      
+      # Première condition : vérifie si x est inférieur à 5 ET y est supérieur à 15
+     
 
-      # Affiche le résultat
-      print(result)
+      # Deuxième condition : vérifie si x est supérieur ou égal à 20 OU y est supérieur ou égal à 40
+
+
+      # Dernière condition : si toutes les conditions précédentes sont fausses
+
+
     </code>
     <code data-type="solution">
-      # Comparaison de deux nombres
-      num1 = 10
-      num2 = 20
-      if num1 < num2:
-          result = "Le premier nombre est inférieur au deuxième."
-      elif num1 > num2:
-          result = "Le premier nombre est supérieur au deuxième."
-      else:
-          result = "Les deux nombres sont égaux."
+      # Première condition : vérifie si x est inférieur à 5 ET y est supérieur à 15
+      if (x < 5) and (y > 15):
+          print("x est inférieur à 5 et y est supérieur à 15")
 
-      # Affiche le résultat
-      print(result)
+      # Deuxième condition : vérifie si x est supérieur ou égal à 20 OU y est supérieur ou égal à 40
+      elif (x >= 20) or (y >= 40):
+          print("x est supérieur ou égal à 20 ou y est supérieur ou égal à 40")
+
+      # Dernière condition : si toutes les conditions précédentes sont fausses
+      else:
+          print("x est supérieur à 5")
     </code>
     <code data-type="sct">
-      test_object("result", undefined_msg = "Assurez-vous de définir une variable `result`.", incorrect_msg = "Assurez-vous que `result` contient le bon résultat en comparant les deux nombres.")
-      success_msg("Bravo ! Passons à la suite.")
+      test_object("x")
+      test_object("y")
+      success_msg("Bon travail ! Continuez ainsi !")
     </code>
-    <div data-type="hint">
-      <p>Utilisez les opérateurs de comparaison (<, >, ==) pour comparer les deux nombres.</p>
+    <div data-type="Solution">
+      <p>Première condition : Vérifie si x est inférieur à 5 et y est supérieur à 15.</p>
+      <p>Deuxième condition : Vérifie si x est supérieur ou égal à 20 ou y est supérieur ou égal à 40.</p>
+      <p>Dernière condition : Si toutes les conditions précédentes sont fausses.</p>
     </div>
-    <div data-type="error-message" data-content="result">
-      <p>Veuillez définir la variable `result`.</p>
+    <div data-type="hint">
+      <p>Indice 1 : Utilisez les opérateurs logiques <code>and</code> et <code>or</code> pour combiner les conditions.</p>
+      <p>Indice 2 : Utilisez la syntaxe <code>if ... elif ... else</code> pour gérer les différentes conditions.</p>
+    </div>
+    <div data-type="error-message" data-content="x">
+      <p>Assurez-vous de créer une variable `x`.</p>
+    </div>
+    <div data-type="error-message" data-content="y">
+      <p>Assurez-vous de créer une variable `y`.</p>
     </div>
   </div>
 </div>
@@ -400,40 +363,60 @@
 
 
 
+  
 
 
 
-<h1>Les boucles</h1>
+
+
+<h1>Les Boucles</h1>
 <div class="exercise">
   <div class="title">
-    <h2>Boucle while pour afficher les nombres de 1 à 5</h2>
   </div>
-  <div data-datacamp-exercise data-lang="python" data-height="250">
-    <code data-type="pre-exercise-code"># no pec</code>
+  <div data-datacamp-exercise data-lang="python" data-height="500">
+    <code data-type="pre-exercise-code">#no pec</code>
     <code data-type="sample-code">
-      # Boucle while pour afficher les nombres de 1 à 5
-      i = 1
-      while i <= 5:
-          print(i)
-          i += 1
+      # Initialisation de la variable
+      x = 0
+
+      # Utilisation d'une boucle while pour afficher les valeurs de x jusqu'à 5
+      
+
+      # Utilisation d'une boucle for pour parcourir une liste et afficher chaque élément
+      fruits = ["pomme", "banane", "orange"]
+    
+   
     </code>
     <code data-type="solution">
-      # Boucle while pour afficher les nombres de 1 à 5
-      i = 1
-      while i <= 5:
-          print(i)
-          i += 1
+      # Utilisation d'une boucle while pour afficher les valeurs de x jusqu'à 5
+      while x < 5:
+          print(x)
+          x += 1
+
+      # Utilisation d'une boucle for pour parcourir une liste et afficher chaque élément
+      fruits = ["pomme", "banane", "orange"]
+      for fruit in fruits:
+          print(fruit)
     </code>
     <code data-type="sct">
-      test_function("print")
-      test_object("i", undefined_msg = "Assurez-vous de définir une variable `i`.")
-      success_msg("Bravo ! Vous avez terminé l'exercice.")
+      test_object("x")
+      test_object("fruits")
+      success_msg("Bon travail ! Continuez ainsi !")
     </code>
-    <div data-type="hint">
-      <p>Utilisez une boucle while avec une condition pour afficher les nombres de 1 à 5.</p>
+    <div data-type="Solution">
+      <p>Utilisation d'une boucle <code>while</code> pour afficher les valeurs de x jusqu'à 5.</p>
+      <p>Utilisation d'une boucle <code>for</code> pour parcourir une liste de fruits et afficher chaque élément.</p>
     </div>
-    <div data-type="error-message" data-content="i">
-      <p>Veuillez définir la variable `i`.</p>
+    <div data-type="hint">
+      <p>Indice 1 : Utilisez l'opérateur de comparaison <code>&lt;</code> dans la boucle <code>while</code>.</p>
+      <p>Indice 2 : Utilisez l'opérateur d'incrémentation <code>+=</code> pour augmenter la valeur de x dans la boucle <code>while</code>.</p>
+      <p>Indice 3 : Utilisez la syntaxe <code>for ... in ...</code> pour itérer à travers la liste de fruits.</p>
+    </div>
+    <div data-type="error-message" data-content="x">
+      <p>Assurez-vous de créer une variable `x`.</p>
+    </div>
+    <div data-type="error-message" data-content="fruits">
+      <p>Assurez-vous de créer une liste `fruits`.</p>
     </div>
   </div>
 </div>
@@ -443,133 +426,64 @@
 
 
 
+
+
+
+
+<h1>Les chaînes de caractères</h1>
 <div class="exercise">
   <div class="title">
-    <h2>Affichage des lettres d'une chaîne de caractères</h2>
+    <h2>Manipulation de chaînes de caractères</h2>
   </div>
-  <div data-datacamp-exercise data-lang="python" data-height="250">
-    <code data-type="pre-exercise-code"># no pec</code>
+  <div data-datacamp-exercise data-lang="python" data-height="500">
+    <code data-type="pre-exercise-code">#no pec</code>
     <code data-type="sample-code">
-      # Affichage des lettres d'une chaîne de caractères
-      word = "Python"
-      for letter in word:
-          print(letter)
+      # Initialisation de la chaîne de caractères
+      texte = "Bonjour le monde"
+
+      # Afficher la longueur de la chaîne de caractères
+      
+
+      # Afficher la première lettre de la chaîne de caractères
+      
+
+      # Afficher les trois premiers caractères de la chaîne de caractères
+      
+
+      # Afficher la chaîne de caractères en majuscules
+      
     </code>
     <code data-type="solution">
-      # Affichage des lettres d'une chaîne de caractères
-      word = "Python"
-      for letter in word:
-          print(letter)
+      # Afficher la longueur de la chaîne de caractères
+      print(len(texte))
+
+      # Afficher la première lettre de la chaîne de caractères
+      print(texte[0])
+
+      # Afficher les trois premiers caractères de la chaîne de caractères
+      print(texte[:3])
+
+      # Afficher la chaîne de caractères en majuscules
+      print(texte.upper())
     </code>
     <code data-type="sct">
-      test_function("print")
-      test_object("word", undefined_msg = "Assurez-vous de définir une variable `word` contenant une chaîne de caractères.")
-      success_msg("Bravo ! Vous avez terminé cet exercice.")
+      test_object("texte")
+      success_msg("Bon travail ! Continuez ainsi !")
     </code>
-    <div data-type="hint">
-      <p>Utilisez une boucle for pour parcourir chaque lettre de la chaîne de caractères et les afficher.</p>
+    <div data-type="Solution">
+      <p>Affiche la longueur de la chaîne de caractères, la première lettre, les trois premiers caractères et la chaîne de caractères en majuscules.</p>
     </div>
-    <div data-type="error-message" data-content="word">
-      <p>Veuillez définir la variable `word`.</p>
+    <div data-type="hint">
+      <p>Indice 1 : Utilisez la fonction <code>len()</code> pour obtenir la longueur de la chaîne de caractères.</p>
+      <p>Indice 2 : Les indices de la chaîne de caractères commencent à 0. Utilisez la notation des crochets pour accéder à des caractères individuels.</p>
+      <p>Indice 3 : Utilisez la notation de tranche pour obtenir une sous-chaîne de caractères.</p>
+      <p>Indice 4 : Utilisez la méthode <code>upper()</code> pour convertir la chaîne de caractères en majuscules.</p>
+    </div>
+    <div data-type="error-message" data-content="texte">
+      <p>Assurez-vous de créer une variable `texte`.</p>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<div class="exercise">
-  <div class="title">
-    <h2>Vérification d'un nombre pair ou impair</h2>
-  </div>
-  <div data-datacamp-exercise data-lang="python" data-height="250">
-    <code data-type="pre-exercise-code"># no pec</code>
-    <code data-type="sample-code">
-      # Vérification d'un nombre pair ou impair
-      number = 15
-      if number % 2 == 0:
-          print("Le nombre est pair.")
-      else:
-          print("Le nombre est impair.")
-    </code>
-    <code data-type="solution">
-      # Vérification d'un nombre pair ou impair
-      number = 15
-      if number % 2 == 0:
-          print("Le nombre est pair.")
-      else:
-          print("Le nombre est impair.")
-    </code>
-    <code data-type="sct">
-      test_function("print")
-      test_object("number", undefined_msg = "Assurez-vous de définir une variable `number` contenant un nombre entier.")
-      success_msg("Bravo ! Vous avez terminé cet exercice.")
-    </code>
-    <div data-type="hint">
-      <p>Utilisez l'opérateur modulo (%) pour vérifier si un nombre est pair ou impair.</p>
-    </div>
-    <div data-type="error-message" data-content="number">
-      <p>Veuillez définir la variable `number`.</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-<h1>Les chaîne de caractères</h1>
-<div class="exercise">
-  <div class="title">
-    <h2>Vérification de la présence d'une lettre dans une chaîne de caractères</h2>
-  </div>
-  <div data-datacamp-exercise data-lang="python" data-height="250">
-    <code data-type="pre-exercise-code"># no pec</code>
-    <code data-type="sample-code">
-      # Vérification de la présence d'une lettre dans une chaîne de caractères
-      word = "python"
-      letter = "y"
-      if letter in word:
-          print(f"La lettre '{letter}' est présente dans la chaîne.")
-      else:
-          print(f"La lettre '{letter}' n'est pas présente dans la chaîne.")
-    </code>
-    <code data-type="solution">
-      # Vérification de la présence d'une lettre dans une chaîne de caractères
-      word = "python"
-      letter = "y"
-      if letter in word:
-          print(f"La lettre '{letter}' est présente dans la chaîne.")
-      else:
-          print(f"La lettre '{letter}' n'est pas présente dans la chaîne.")
-    </code>
-    <code data-type="sct">
-      test_function("print")
-      test_object("word", undefined_msg = "Assurez-vous de définir une variable `word` contenant une chaîne de caractères.")
-      test_object("letter", undefined_msg = "Assurez-vous de définir une variable `letter` contenant une lettre.")
-      success_msg("Bravo ! Vous avez terminé cet exercice.")
-    </code>
-    <div data-type="hint">
-      <p>Utilisez l'opérateur 'in' pour vérifier si une lettre est présente dans une chaîne de caractères.</p>
-    </div>
-    <div data-type="error-message" data-content="word">
-      <p>Veuillez définir la variable `word`.</p>
-    </div>
-    <div data-type="error-message" data-content="letter">
-      <p>Veuillez définir la variable `letter`.</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
 
 
 

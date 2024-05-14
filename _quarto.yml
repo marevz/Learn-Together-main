@@ -8,7 +8,7 @@ website:
     background: light
     foreground: black
     left:
-      - text: Introduction
+      - text: Accueil
         file: Python.qmd
       - text: Les fondamentaux
         file: Fondamentaux.qmd
