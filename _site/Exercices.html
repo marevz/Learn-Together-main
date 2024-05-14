@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>exercices</title>
+<title>Python pour les nuls</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -78,14 +44,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
-  "type": "overlay",
+  "type": "textbox",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -111,6 +76,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Python pour les nuls</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -136,7 +106,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
-    <a href="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-"></i></a>
+    <a href="https://www.linkedin.com/in/mareva-perez-b26a4a258/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/marevz/Learn-Together-main">
+            Code source
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -146,15 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#les-méthodes-des-listes" id="toc-les-méthodes-des-listes" class="nav-link active" data-scroll-target="#les-méthodes-des-listes">LEs méthodes des listes</a></li>
-  <li><a href="#parcours-de-listes" id="toc-parcours-de-listes" class="nav-link" data-scroll-target="#parcours-de-listes">Parcours de listes</a></li>
-  <li><a href="#appel-dune-fonction-avec-arguments" id="toc-appel-dune-fonction-avec-arguments" class="nav-link" data-scroll-target="#appel-dune-fonction-avec-arguments">Appel d’une fonction avec arguments</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -162,256 +134,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<iframe src="Exercices/example.html" width="800px" height="600px">
+<iframe src="Exercices/example.html" width="1200" height="1200">
 </iframe>
-<section id="les-méthodes-des-listes" class="level2">
-<h2 class="anchored" data-anchor-id="les-méthodes-des-listes">LEs méthodes des listes</h2>
-<p>Faire des exercices sur les listes : |Méthode | Description | Exemple | |———|———-|———-| |<code>append()</code> | Ajoute un élément à la fin de la liste | <code>list.append(8)</code> | |<code>extend()</code> | Étend la liste en ajoutant tous les éléments d’une autre liste | <code>list.extend([9, 12])</code> | |<code>insert()</code> | Insère un élément à une position donnée| <code>liste.insert(4, d)</code> | |<code>remove()</code> |Supprime la première occurrence d’un élément | <code>liste.remove('d')</code>| |<code>pop()</code> | Supprime et renvoie un élément à une position donnée (par défaut ,le dernier) | <code>liste.pop()</code>| |<code>clear()</code> | Supprime tous les éléments de la liste | <code>liste.clear()</code> | |<code>index()</code> | Retourne l’indice du premier élément correspondant | <code>liste.index('d')</code>| |<code>count()</code> | Compte le nombre d’occurences d’une élément spécifique | <code>liste.count(8)</code> | |<code>sort()</code> | Trie les élément de la liste (dans un ordre spécifique) | <code>liste.sort()</code>| |<code>reverse()</code> | Inverse l’ordre des éléments de la liste | <code>liste.reverse()</code> |</p>
-<div id="ad2d54be" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Création d'une liste de base</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ma_liste <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ma_liste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1, 2, 3]</code></pre>
-</div>
-</div>
-<div id="162ff801" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de append()</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ma_liste.append(<span class="st">"quatre"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après append(quatre):"</span>, ma_liste)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de extend()</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ma_liste.extend([<span class="dv">5</span>, <span class="dv">6</span>])</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après extend([5, 6]):"</span>, ma_liste)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de insert()</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ma_liste.insert(<span class="dv">1</span>, <span class="st">'elephant'</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après insert(1, 'elephant'):"</span>, ma_liste)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de remove()</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ma_liste.remove(<span class="st">'elephant'</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après remove('elephant'):"</span>, ma_liste)</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de pop()</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>element_supprime <span class="op">=</span> ma_liste.pop()</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après pop():"</span>, ma_liste, <span class="st">", Élément supprimé:"</span>, element_supprime)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de clear()</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ma_liste.clear()</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après clear():"</span>, ma_liste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Après append(quatre): [1, 2, 3, 'quatre']
-Après extend([5, 6]): [1, 2, 3, 'quatre', 5, 6]
-Après insert(1, 'elephant'): [1, 'elephant', 2, 3, 'quatre', 5, 6]
-Après remove('elephant'): [1, 2, 3, 'quatre', 5, 6]
-Après pop(): [1, 2, 3, 'quatre', 5] , Élément supprimé: 6
-Après clear(): []</code></pre>
-</div>
-</div>
-<div id="0967ba47" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recréation de la liste pour les autres méthodes</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ma_liste <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="f1b779a5" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de index()</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>index_de_4 <span class="op">=</span> ma_liste.index(<span class="dv">4</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Index de 4:"</span>, index_de_4)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de count()</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>compte_de_2 <span class="op">=</span> ma_liste.count(<span class="dv">2</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Nombre d'occurrences de 2:"</span>, compte_de_2)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de sort()</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ma_liste.sort()</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après sort():"</span>, ma_liste)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Utilisation de reverse()</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ma_liste.reverse()</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Après reverse():"</span>, ma_liste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Index de 4: 2
-Nombre d'occurrences de 2: 2
-Après sort(): [1, 2, 2, 3, 4]
-Après reverse(): [4, 3, 2, 2, 1]</code></pre>
-</div>
-</div>
-<ul>
-<li><p><strong>Parcours de Liste</strong> Le parcours de liste consiste à accéder séquentiellement à chaque élément d’une liste. Cela peut être fait de différentes manières, mais les plus courantes sont les boucles <code>for</code> et <code>while</code>.</p>
-<ul>
-<li>Boucle <code>for</code> : La boucle <code>for</code> est la méthode la plus couramment utilisée pour parcourir une liste. Elle permet de traiter chaque élément individuellement.</li>
-<li><code>List Comprehension</code> : La compréhension de liste est une méthode concise pour créer des listes. Elle permet de transformer une liste en une autre liste, en filtrant les éléments pour former une liste des résultats d’une expression donnée.</li>
-</ul></li>
-</ul>
-<p>La syntaxe de base d’une compréhension de liste est :</p>
-<p><code>[</code>nouvelle_expression <code>for</code> item <code>in</code> iterable <code>if</code> condition<code>]</code></p>
-<ul>
-<li><code>nouvelle_expression</code> est l’expression qui définit comment mapper les éléments de l’<code>iterable</code> (par exemple, une liste).</li>
-<li><code>item</code> est la variable qui prend la valeur de chaque élément de l’<code>iterable</code> pendant chaque itération.</li>
-<li><code>condition</code> est une condition optionnelle pour filtrer les éléments de l’<code>iterable</code>.</li>
-</ul>
-<div id="23e52ce6" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># récupérer tous les fruits avec un "a"</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>, <span class="st">"kiwi"</span>, <span class="st">"mango"</span>]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>newlist <span class="op">=</span> []</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> fruits:</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"a"</span> <span class="kw">in</span> f:</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        newlist.append(f)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(newlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['apple', 'banana', 'mango']</code></pre>
-</div>
-</div>
-<div id="cad1a958" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>newlist <span class="op">=</span> [f <span class="cf">for</span> f <span class="kw">in</span> fruits <span class="cf">if</span> <span class="st">"a"</span> <span class="kw">in</span> f ]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(newlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['apple', 'banana', 'mango']</code></pre>
-</div>
-</div>
-<div id="c4abb86e" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>nombre_carres <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> nombre]</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>nombre_carres</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>[1, 100, 10000]</code></pre>
-</div>
-</div>
-<div id="b6df8cb5" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer une liste des carrés des nombres de 0 à 9 :</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>carres <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="8a44ffca" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer les nombres pairs dans une liste :</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>nombres_pairs <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="49ded892" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquer une fonction à tous les éléments :</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>noms_majuscules <span class="op">=</span> [nom.upper() <span class="cf">for</span> nom <span class="kw">in</span> [<span class="st">"alice"</span>, <span class="st">"bob"</span>, <span class="st">"charlie"</span>]]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>noms_majuscules</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>['ALICE', 'BOB', 'CHARLIE']</code></pre>
-</div>
-</div>
-</section>
-<section id="parcours-de-listes" class="level2">
-<h2 class="anchored" data-anchor-id="parcours-de-listes">Parcours de listes</h2>
-<div id="a0192d39" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># récupérer tous les fruits avec un "a"</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>fruits <span class="op">=</span> [<span class="st">"poire"</span>, <span class="st">"fraise"</span>, <span class="st">"kiwi"</span>, <span class="st">"pitaya"</span>, <span class="st">"mangue"</span>]</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>newlist <span class="op">=</span> []</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> f <span class="kw">in</span> fruits:</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="st">"a"</span> <span class="kw">in</span> f:</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>        newlist.append(f)</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(newlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['fraise', 'pitaya', 'mangue']</code></pre>
-</div>
-</div>
-<div id="93f4a337" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>newlist <span class="op">=</span> [f <span class="cf">for</span> f <span class="kw">in</span> fruits <span class="cf">if</span> <span class="st">"a"</span> <span class="kw">in</span> f ]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(newlist)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>['fraise', 'pitaya', 'mangue']</code></pre>
-</div>
-</div>
-<div id="0d84c7db" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Créer une liste des carrés des nombres de 0 à 9 :</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>carres <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="2c11f83d" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrer les nombres pairs dans une liste :</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>nombres_pairs <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>) <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="19d17925" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Appliquer une fonction à tous les éléments :</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>noms_majuscules <span class="op">=</span> [nom.upper() <span class="cf">for</span> nom <span class="kw">in</span> [<span class="st">"alice"</span>, <span class="st">"bob"</span>, <span class="st">"charlie"</span>]]</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>noms_majuscules</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>['ALICE', 'BOB', 'CHARLIE']</code></pre>
-</div>
-</div>
-</section>
-<section id="appel-dune-fonction-avec-arguments" class="level2">
-<h2 class="anchored" data-anchor-id="appel-dune-fonction-avec-arguments">Appel d’une fonction avec arguments</h2>
-<p>Exemples :</p>
-<div id="e9d36d6e" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saluer(nom):</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Bonjour, </span><span class="sc">{</span>nom<span class="sc">}</span><span class="ss">!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="c19cda71" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>saluer(nom <span class="op">=</span> <span class="st">"Jordan"</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>saluer(nom <span class="op">=</span> <span class="st">"Lola"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>saluer(nom <span class="op">=</span> <span class="st">"Mélany"</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>saluer(nom <span class="op">=</span> <span class="st">"Kevin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Bonjour, Jordan!
-Bonjour, Lola!
-Bonjour, Mélany!
-Bonjour, Kevin!</code></pre>
-</div>
-</div>
-<div id="52f66ce2" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> affiche_message(message):</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Message reçu : </span><span class="sc">{</span>message<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>affiche_message(<span class="st">"Hey, what's up"</span>)</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>affiche_message(<span class="st">"La Programmation c'est cool!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Message reçu : Hey, what's up
-Message reçu : La Programmation c'est cool!</code></pre>
-</div>
-</div>
-<div id="8fbd711a" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> additionner(a, b):</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    somme <span class="op">=</span> a <span class="op">+</span> b</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"La somme de </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> et </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> est </span><span class="sc">{</span>somme<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="2506f98e" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>additionner(a <span class="op">=</span> <span class="dv">5</span>, b <span class="op">=</span> <span class="dv">3</span>)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>additionner(<span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>La somme de 5 et 3 est 8
-La somme de 5 et 3 est 8</code></pre>
-</div>
-</div>
-<div id="805be4a5" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>additionner(b <span class="op">=</span> <span class="dv">10</span>, a <span class="op">=</span> <span class="dv">67</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>La somme de 67 et 10 est 77</code></pre>
-</div>
-</div>
-<div id="9ccb0896" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> division(a, b):</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    quotient <span class="op">=</span> a <span class="op">/</span> b</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Le quotient de </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss"> et </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss"> est </span><span class="sc">{</span>quotient<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>division(a <span class="op">=</span> <span class="dv">5</span>, b <span class="op">=</span> <span class="dv">3</span>)</span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>division(b <span class="op">=</span> <span class="dv">3</span>, a <span class="op">=</span> <span class="dv">5</span>)</span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>division(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>division(<span class="dv">5</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Le quotient de 5 et 3 est 1.6666666666666667
-Le quotient de 5 et 3 est 1.6666666666666667
-Le quotient de 3 et 5 est 0.6
-Le quotient de 5 et 3 est 1.6666666666666667</code></pre>
-</div>
-</div>
-<div id="ee690473" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> puissance(base, exposant):</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    resultat <span class="op">=</span> base <span class="op">**</span> exposant</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>base<span class="sc">}</span><span class="ss"> élevé à la puissance </span><span class="sc">{</span>exposant<span class="sc">}</span><span class="ss"> est égal </span><span class="sc">{</span>resultat<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>puissance(exposant <span class="op">=</span> <span class="dv">2</span>, base <span class="op">=</span>  <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 élevé à la puissance 2 est égal 9</code></pre>
-</div>
-</div>
 
 
-</section>
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1449,12 +1449,13 @@ def ma_fonction():
 ma_fonction()
 ```
 
-Les décorateurs sont un aspect avancé de Python, mais ils offrent une puissante fonctionnalité pour étendre et modifier le comportement des fonctions et des méthodes de manière flexible et élégante. En comprenant les principes de base des décorateurs et leur utilisation avancée, vous pouvez améliorer la lisibilité, la réutilisabilité et la modularité de votre code Python.
 
-* 1. Les décorateurs peuvent retourner une fonction au lieu de la fonction décorée elle-même, ce qui permet de contrôler davantage le comportement de la fonction.
+Les décorateurs représentent un aspect avancé de Python, mais ils proposent une fonctionnalité puissante pour étendre et ajuster de manière souple et élégante le comportement des fonctions et des méthodes. En comprenant les bases des décorateurs et leur utilisation avancée, vous pouvez améliorer la clarté, la réutilisabilité et la modularité de votre code Python.
 
-* 2. Les décorateurs peuvent également être appliqués aux méthodes de classe pour étendre ou modifier le comportement des méthodes.
+* 1. Les décorateurs peuvent renvoyer une fonction plutôt que la fonction décorée elle-même, offrant ainsi un contrôle accru sur le comportement de la fonction.
 
-* 3. Il est possible d'empiler plusieurs décorateurs sur une même fonction pour ajouter plusieurs couches de fonctionnalités.
+* 2. Ils peuvent aussi être appliqués aux méthodes de classe pour élargir ou modifier leurs fonctionnalités.
+
+* 3. Il est même possible d'empiler plusieurs décorateurs sur une même fonction afin d'ajouter plusieurs niveaux de fonctionnalités.
 
 

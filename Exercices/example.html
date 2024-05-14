@@ -18,415 +18,560 @@
 </head>
 <body>
 
+  <h1>Introduction</h1>
   <div class="exercise">
     <div class="title">
-      <h2>Introduction</h2>
+      <h2>Créer et manipuler des variables</h2>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="500">
+    <div data-datacamp-exercise data-lang="python" data-height="500">
       <code data-type="pre-exercise-code"># no pec</code>
       <code data-type="sample-code">
-        # Calculate 3 + 4
-        3 + 4
-
-        # Calculate 6 + 12
+        # Créer la variable "new" en attribuant 15 comme valeur puis l'afficher
+        new = 
+        print(new)
+  
+        # Convertir la variable new en une variable "str"
+        
+  
+        # Créer trois variables x, y et z avec les valeurs respectives "Hello", "je" et "suis là", puis les imprimer une par une
+  
+  
+        # Faire en sorte de retourner : "Hello 15, je suis là"
+        print(_)
       </code>
       <code data-type="solution">
-        # Calculate 3 + 4
-        3 + 4
-
-        # Calculate 6 + 12
-        6 + 12</code>
-      <code data-type="sct">
-        test_output_contains(&quot;18&quot;, incorrect_msg = &quot;Make sure to add `6 + 12`
-        on
-        a new line. Do not start the line with a `#`, otherwise your R code is not executed!&quot;)
-        success_msg(&quot;Awesome! See how the console shows the result of the R code you
-        submitted? Now that you&#39;re familiar with the interface, let&#39;s get down to R
-        business!&quot;)
+        # Créer la variable "new" en attribuant 15 comme valeur puis l'afficher
+        new = 15
+        print(new)
+  
+        # Convertir la variable new en une variable "str"
+        new = str(new)
+  
+        # Créer trois variables x, y et z avec les valeurs respectives "Hello", "je" et "suis là", puis les imprimer une par une
+        x = "Hello"
+        y = ", je"
+        z = "suis là"
+        print(x)
+        print(y)
+        print(z)
+  
+        # Faire en sorte de retourner : "Hello 15, je suis là"
+        print(x + " " + new + ", " + y + " " + z)
       </code>
+      <code data-type="sct">
+        test_object("new", undefined_msg = "Assurez-vous de créer une variable `new`.", incorrect_msg = "Assurez-vous d'assigner la bonne valeur à `new`.")
+        test_function("str")
+        test_object("x")
+        test_object("y")
+        test_object("z")
+        success_msg("Bon travail ! Continuez ainsi !")
+      </code>
+      <div data-type="Solution">
+        <p>Créez la variable "new" en lui attribuant la valeur 15, puis affichez-la. Convertissez ensuite la variable "new" en une chaîne de caractères. Ensuite, créez trois variables x, y et z avec les valeurs respectives "Hello", ", je" et "suis là", puis imprimez-les une par une. Enfin, retournez "Hello 15, je suis là" en combinant ces variables.</p>
+      </div>
       <div data-type="hint">
-        <p>Just add a line of R code that calculates the sum of 6 and 12, just like the
-          example
-          in the sample code!</p>
+        <p>Indice 1 : regardez comment vous pouvez assigner une valeur à une variable en Python. Utilisez cette même syntaxe pour attribuer la valeur 15 à la variable "new".</p>
+        <p>Indice 2 : vous devrez convertir la variable "new" en une chaîne de caractères. Il y a une fonction en Python pour cela.</p>
+        <p>Indice 3 : vous devez créer trois nouvelles variables avec les valeurs spécifiées. Assurez-vous de les déclarer avant de les utiliser.</p>
+        <p>Indice 4 : vous devrez concaténer les différentes variables pour obtenir la phrase demandée.</p>
+      </div>
+      <div data-type="error-message" data-content="new">
+        <p>Veuillez définir la variable `new`.</p>
+      </div>
+      <div data-type="error-message" data-content="x">
+        <p>Assurez-vous de créer une variable `x`.</p>
+      </div>
+      <div data-type="error-message" data-content="y">
+        <p>Assurez-vous de créer une variable `y`.</p>
+      </div>
+      <div data-type="error-message" data-content="z">
+        <p>Assurez-vous de créer une variable `z`.</p>
       </div>
     </div>
   </div>
+ 
+  
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>Arithmetic with R</h2>
+
+
+
+
+  <h1>Les opérations arithmétiques</h1>
+<div class="exercise">
+  <div class="title">
+    <h2>Opérations d'Addition et de Soustraction</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="350">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Addition
+      result_addition = 
+
+      # Affiche le résultat de l'addition
+      print(result_addition)
+
+      # Soustraction
+      
+  
+      # Affiche le résultat de la soustraction
+    </code>
+    <code data-type="solution">
+      # Addition
+      result_addition = 5 + 3
+
+      # Affiche le résultat de l'addition
+      print(result_addition)
+
+      # Soustraction
+      result_subtraction = 10 - 4
+
+      # Affiche le résultat de la soustraction
+      print(result_subtraction)
+    </code>
+    <code data-type="sct">
+      test_object("result_addition", undefined_msg = "Assurez-vous de définir une variable `result_addition`.", incorrect_msg = "Assurez-vous que `result_addition` contient le résultat de l'addition de 5 et 3.")
+      test_object("result_subtraction", undefined_msg = "Assurez-vous de définir une variable `result_subtraction`.", incorrect_msg = "Assurez-vous que `result_subtraction` contient le résultat de la soustraction de 10 par 4.")
+      success_msg("Bon début ! Passons à la suite.")
+    </code>
+    <div data-type="Solution">
+      <p>Résolvez chaque opération arithmétique et stockez le résultat dans la variable correspondante. Ensuite, affichez chaque résultat.</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # An addition
-        5 + 5
-
-        # A subtraction
-        5 - 5
-
-        # A multiplication
-        3 * 5
-
-        # A division
-        (5 + 5) / 2
-
-        # Exponentiation
-
-
-        # Modulo
-      </code>
-      <code data-type="solution">
-        # An addition
-        5 + 5
-
-        # A subtraction
-        5 - 5
-
-        # A multiplication
-        3 * 5
-
-        # A division
-        (5 + 5) / 2
-
-        # Exponentiation
-        2 ^ 5
-
-        # Modulo
-        28 %% 6
-      </code>
-      <code data-type="sct">
-        msg = &quot;Do not remove the other arithmetic examples!&quot;
-        test_output_contains(&quot;2^5&quot;, incorrect_msg = &quot;The exponentiation
-        example
-        is not correct. Write `2 ^ 5` on a new line.&quot;)
-        test_output_contains(&quot;28 %% 6&quot;, incorrect_msg = &quot;There seems to be an
-        issue with the modulo example. Write `28 %% 6` on a new line.&quot;)
-        success_msg(&quot;Great! Head over to the next exercise.&quot;)
-      </code>
-      <div data-type="hint">
-        <p>Another example of the modulo operator:
-          <code>9 %% 2</code> equals
-          <code>1</code>.
-        </p>
-      </div>
+    <div data-type="hint">
+      <p>Pour l'addition, utilisez l'opérateur "+".</p>
+      <p>Pour la soustraction, utilisez l'opérateur "-".</p>
+    </div>
+    <div data-type="error-message" data-content="result_addition">
+      <p>Veuillez définir la variable `result_addition`.</p>
+    </div>
+    <div data-type="error-message" data-content="result_subtraction">
+      <p>Veuillez définir la variable `result_subtraction`.</p>
     </div>
   </div>
+</div>
+  
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>Variable assignment</h2>
+
+
+<div class="exercise">
+  <div class="title">
+    <h2>Opérations de Multiplication et de Division</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="350">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Multiplication
+      result_multiplication = 
+
+      # Affiche le résultat de la multiplication
+      
+  
+      # Division
+      
+  
+      # Affiche le résultat de la division
+    </code>
+    <code data-type="solution">
+      # Multiplication
+      result_multiplication = 6 * 2
+
+      # Affiche le résultat de la multiplication
+      print(result_multiplication)
+
+      # Division
+      result_division = 20 / 5
+
+      # Affiche le résultat de la division
+      print(result_division)
+    </code>
+    <code data-type="sct">
+      test_object("result_multiplication", undefined_msg = "Assurez-vous de définir une variable `result_multiplication`.", incorrect_msg = "Assurez-vous que `result_multiplication` contient le résultat de la multiplication de 6 par 2.")
+      test_object("result_division", undefined_msg = "Assurez-vous de définir une variable `result_division`.", incorrect_msg = "Assurez-vous que `result_division` contient le résultat de la division de 20 par 5.")
+      success_msg("Bien joué ! Passons à la suite.")
+    </code>
+    <div data-type="hint">
+      <p>Pour la multiplication, utilisez l'opérateur "*".</p>
+      <p>Pour la division, utilisez l'opérateur "/".</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # Assign the value 42 to x
-        x &lt;-
-
-        # Print out the value of the variable x
-        x
-      </code>
-      <code data-type="solution">
-        # Assign the value 42 to x
-        x &lt;- 42
-
-        # Print out the value of the variable x
-        x
-      </code>
-      <code data-type="sct">
-        test_object(&quot;x&quot;, undefined_msg = &quot;Make sure to define a variable `x`.&quot;,
-        incorrect_msg = &quot;Make sure that you assign the correct value to `x`.&quot;)
-        success_msg(&quot;Good job! Have you noticed that R does not print the value of a
-        variable to the console when you did the assignment? `x &lt;- 42` did not generate
-        any
-        output, because R assumes that you will be needing this variable in the future.
-        Otherwise you wouldn&#39;t have stored the value in a variable in the first place,
-        right? Proceed to the next exercise!&quot;)
-      </code>
-      <div data-type="hint">
-        <p>Look at how the value 4 was assigned to
-          <code>my_variable</code> in the exercise&#39;s assignment. Do the exact same
-          thing
-          in the editor, but now assign 42 to the variable
-          <code>x</code>.
-        </p>
-      </div>
+    <div data-type="error-message" data-content="result_multiplication">
+      <p>Veuillez définir la variable `result_multiplication`.</p>
+    </div>
+    <div data-type="error-message" data-content="result_division">
+      <p>Veuillez définir la variable `result_division`.</p>
     </div>
   </div>
+</div>
+
+  
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>Variable assignment (2)</h2>
+
+<div class="exercise">
+  <div class="title">
+    <h2>Opérations de Puissance et de Modulo</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="300">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Puissance
+      result_power = 
+
+      # Affiche le résultat de la puissance
+      
+
+      # Modulo
+      
+
+      # Affiche le résultat du modulo
+    </code>
+    <code data-type="solution">
+      # Puissance
+      result_power = 2 ** 3
+
+      # Affiche le résultat de la puissance
+      print(result_power)
+
+      # Modulo
+      result_modulo = 17 % 5
+
+      # Affiche le résultat du modulo
+      print(result_modulo)
+    </code>
+    <code data-type="sct">
+      test_object("result_power", undefined_msg = "Assurez-vous de définir une variable `result_power`.", incorrect_msg = "Assurez-vous que `result_power` contient le résultat de 2 élevé à la puissance 3.")
+      test_object("result_modulo", undefined_msg = "Assurez-vous de définir une variable `result_modulo`.", incorrect_msg = "Assurez-vous que `result_modulo` contient le résultat du modulo de 17 par 5.")
+      success_msg("Très bien ! Un dernier exercice.")
+    </code>
+    <div data-type="hint">
+      <p>Pour la puissance, utilisez l'opérateur "**".</p>
+      <p>Pour le modulo, utilisez l'opérateur "%".</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # Assign the value 5 to the variable my_apples
-
-
-        # Print out the value of the variable my_apples
-      </code>
-      <code data-type="solution">
-        # Assign the value 5 to the variable my_apples
-        my_apples &lt;- 5
-
-        # Print out the value of the variable my_apples
-        my_apples
-      </code>
-      <code data-type="sct">
-        test_object(&quot;my_apples&quot;,
-        undefined_msg = &quot;Please make sure to define a variable `my_apples`.&quot;,
-        incorrect_msg = &quot;Make sure that you assign the correct value to `my_apples`.&quot;)
-        test_output_contains(&quot;my_apples&quot;, incorrect_msg = &quot;Have you
-        explicitly
-        told R to print out the `my_apples` variable to the console?&quot;)
-        success_msg(&quot;Great! Continue to the next exercise!&quot;)
-      </code>
-      <div data-type="hint">
-        <p>Remember that if you want to assign a number or an object to a variable in R, you
-          can
-          make use of the assignment operator
-          <code>&lt;-</code>. Alternatively, you can use
-          <code>=</code>, but
-          <code>&lt;-</code> is widely preferred in the R community.
-        </p>
-      </div>
+    <div data-type="error-message" data-content="result_power">
+      <p>Veuillez définir la variable `result_power`.</p>
+    </div>
+    <div data-type="error-message" data-content="result_modulo">
+      <p>Veuillez définir la variable `result_modulo`.</p>
     </div>
   </div>
+</div>
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>Variable assignment (3)</h2>
+
+
+
+<div class="exercise">
+  <div class="title">
+    <h2>Calcul de Moyenne</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="300">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Moyenne de deux nombres
+      num1 = 10
+      num2 = 20
+      average = 
+
+      # Affiche la moyenne
+    </code>
+    <code data-type="solution">
+      # Moyenne de deux nombres
+      num1 = 10
+      num2 = 20
+      average = (num1 + num2) / 2
+
+      # Affiche la moyenne
+      print(average)
+    </code>
+    <code data-type="sct">
+      test_object("average", undefined_msg = "Assurez-vous de définir une variable `average`.", incorrect_msg = "Assurez-vous que `average` contient la moyenne de 10 et 20.")
+      success_msg("Félicitations ! Vous avez terminé tous les exercices sur les opérations arithmétiques en Python.")
+    </code>
+    <div data-type="hint">
+      <p>Pour calculer la moyenne, ajoutez les deux nombres, puis divisez la somme par 2.</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # Assign a value to the variables my_apples and my_oranges
-        my_apples &lt;- 5
-
-
-        # Add these two variables together
-
-
-        # Create the variable my_fruit
-      </code>
-      <code data-type="solution">
-        # Assign a value to the variables my_apples and my_oranges
-        my_apples &lt;- 5
-        my_oranges &lt;- 6
-
-        # Add these two variables together
-        my_apples + my_oranges
-
-        # Create the variable my_fruit
-        my_fruit &lt;- my_apples + my_oranges
-      </code>
-      <code data-type="sct">
-        test_object(&quot;my_apples&quot;, incorrect_msg = &quot;Keep the line that assigns
-        5 to
-        `my_apples`.&quot;)
-        test_object(&quot;my_oranges&quot;, incorrect_msg = &quot;Keep the line that assigns
-        6
-        to `my_oranges`.&quot;)
-        test_output_contains(&quot;my_apples + my_oranges&quot;,
-        incorrect_msg = &quot;Make sure to print out the result of adding `my_apples` and
-        `my_oranges`. The code example in the description already gives away the answer to
-        this
-        instruction!&quot;)
-        msg &lt;- &quot;Have you used `my_fruit &lt;- my_apples + my_oranges` to create the
-        `my_fruit` variable?&quot;
-        test_object(&quot;my_fruit&quot;, undefined_msg = msg, incorrect_msg = msg)
-        success_msg(&quot;Nice one! The great advantage of doing calculations with variables
-        is
-        reusability. If you just change `my_apples` to equal 12 instead of 5 and rerun the
-        script, `my_fruit` will automatically update as well. Continue to the next exercise.&quot;)
-      </code>
-      <div data-type="hint">
-        <p>
-          <code>my_fruit</code> is just the sum of
-          <code>my_apples</code> and
-          <code>my_oranges</code>. You can use the
-          <code>+</code> operator to sum the two and
-          <code>&lt;-</code> to assign that value to the variable
-          <code>my_fruit</code>.
-        </p>
-      </div>
+    <div data-type="error-message" data-content="average">
+      <p>Veuillez définir la variable `average`.</p>
     </div>
   </div>
+</div>
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>Apples and oranges</h2>
+
+
+
+
+
+
+<h1>Les conditions</h1>
+<div class="exercise">
+  <div class="title">
+    <h2>Vérification de la parité</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="250">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Vérification de la parité
+      number = 10
+      if number % 2 == 0:
+          result = "pair"
+      else:
+          result = "impair"
+
+      # Affiche le résultat
+      print(result)
+    </code>
+    <code data-type="solution">
+      # Vérification de la parité
+      number = 10
+      if number % 2 == 0:
+          result = "pair"
+      else:
+          result = "impair"
+
+      # Affiche le résultat
+      print(result)
+    </code>
+    <code data-type="sct">
+      test_object("result", undefined_msg = "Assurez-vous de définir une variable `result`.", incorrect_msg = "Assurez-vous que `result` contient le bon résultat en fonction de la parité du nombre.")
+      success_msg("Très bien ! Passons à l'exercice suivant.")
+    </code>
+    <div data-type="hint">
+      <p>Utilisez l'opérateur modulo (%) pour vérifier si un nombre est pair ou impair.</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # Assign a value to the variable my_apples
-        my_apples &lt;- 5
-
-        # Fix the assignment of my_oranges
-        my_oranges &lt;- &quot;six&quot;
-
-        # Create the variable my_fruit and print it out
-        my_fruit &lt;- my_apples + my_oranges
-        my_fruit
-      </code>
-      <code data-type="solution">
-        # Assign a value to the variable my_apples
-        my_apples &lt;- 5
-
-        # Fix the assignment of my_oranges
-        my_oranges &lt;- 6
-
-        # Create the variable my_fruit and print it out
-        my_fruit &lt;- my_apples + my_oranges
-        my_fruit
-      </code>
-      <code data-type="sct">
-        test_error(incorrect_msg = &quot;You can do this by setting the `my_oranges`
-        variable to
-        a numeric value, not a string!&quot;)
-        test_object(&quot;my_apples&quot;, incorrect_msg = &quot;Make sure that `my_apples`
-        still contains `5`.&quot;)
-        test_object(&quot;my_oranges&quot;, incorrect_msg = &quot;Make sure that
-        `my_oranges` is
-        equal to `6`.&quot;)
-        test_object(&quot;my_fruit&quot;, incorrect_msg = &quot;The value of `my_fruit` is
-        not
-        correct. It should be 11, the sum of `my_apples` and `my_oranges`.&quot;)
-        test_output_contains(&quot;my_fruit&quot;, incorrect_msg = &quot;Don&#39;t remove
-        the
-        line that prints out `my_fruit`.&quot;)
-        success_msg(&quot;Awesome, keep up the good work! Continue to the next exercise.&quot;)
-      </code>
-      <div data-type="hint">
-        <p>You have to assign the numeric value
-          <code>6</code> to the
-          <code>my_oranges</code> variable instead of the character value
-          <code>&quot;six&quot;</code>. Note how the quotation marks are used to indicate
-          that
-          <code>&quot;six&quot;</code> is a character.
-        </p>
-      </div>
+    <div data-type="error-message" data-content="result">
+      <p>Veuillez définir la variable `result`.</p>
     </div>
   </div>
+</div>
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>Basic data types in R</h2>
+
+
+
+<div class="exercise">
+  <div class="title">
+    <h2>Comparaison de deux nombres</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="500">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Comparaison de deux nombres
+      num1 = 10
+      num2 = 20
+      if num1 < num2:
+          result = "Le premier nombre est inférieur au deuxième."
+      elif num1 > num2:
+          result = "Le premier nombre est supérieur au deuxième."
+      else:
+          result = "Les deux nombres sont égaux."
+
+      # Affiche le résultat
+      print(result)
+    </code>
+    <code data-type="solution">
+      # Comparaison de deux nombres
+      num1 = 10
+      num2 = 20
+      if num1 < num2:
+          result = "Le premier nombre est inférieur au deuxième."
+      elif num1 > num2:
+          result = "Le premier nombre est supérieur au deuxième."
+      else:
+          result = "Les deux nombres sont égaux."
+
+      # Affiche le résultat
+      print(result)
+    </code>
+    <code data-type="sct">
+      test_object("result", undefined_msg = "Assurez-vous de définir une variable `result`.", incorrect_msg = "Assurez-vous que `result` contient le bon résultat en comparant les deux nombres.")
+      success_msg("Bravo ! Passons à la suite.")
+    </code>
+    <div data-type="hint">
+      <p>Utilisez les opérateurs de comparaison (<, >, ==) pour comparer les deux nombres.</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # Change my_numeric to be 42
-        my_numeric &lt;- 42.5
-
-        # Change my_character to be &quot;universe&quot;
-        my_character &lt;- &quot;some text&quot;
-
-        # Change my_logical to be FALSE
-        my_logical &lt;- TRUE
-      </code>
-      <code data-type="solution">
-        # Change my_numeric to be 42
-        my_numeric &lt;- 42
-
-        # Change my_character to be &quot;universe&quot;
-        my_character &lt;- &quot;universe&quot;
-
-        # Change my_logical to be FALSE
-        my_logical &lt;- FALSE
-      </code>
-      <code data-type="sct">
-        test_object(&quot;my_numeric&quot;, incorrect_msg = &quot;Have you correctly changed
-        the
-        declaration of `my_numeric` so it contains the value 42?&quot;)
-        test_object(&quot;my_character&quot;, incorrect_msg = &quot;Have you correctly
-        changed
-        `my_character` to `\&quot;universe\&quot;`? Don&#39;t forget the quotes!&quot;)
-        test_object(&quot;my_logical&quot;, incorrect_msg = &quot;Have you correctly changed
-        `my_logical` to `FALSE`? All letters of `FALSE` should be capitalized!&quot;)
-        success_msg(&quot;Great work! Continue to the next exercise.&quot;)
-      </code>
-      <div data-type="hint">
-        <p>Replace the values in the editor with the values that are provided in the
-          exercise.
-          For example:
-
-          <code>my_numeric &lt;- 42</code> assigns the value 42 to the variable
-          <code>my_numeric</code>.
-        </p>
-      </div>
+    <div data-type="error-message" data-content="result">
+      <p>Veuillez définir la variable `result`.</p>
     </div>
   </div>
+</div>
 
 
-  <div class="exercise">
-    <div class="title">
-      <h2>What's that data type?</h2>
+
+
+
+
+
+
+<h1>Les boucles</h1>
+<div class="exercise">
+  <div class="title">
+    <h2>Boucle while pour afficher les nombres de 1 à 5</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="250">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Boucle while pour afficher les nombres de 1 à 5
+      i = 1
+      while i <= 5:
+          print(i)
+          i += 1
+    </code>
+    <code data-type="solution">
+      # Boucle while pour afficher les nombres de 1 à 5
+      i = 1
+      while i <= 5:
+          print(i)
+          i += 1
+    </code>
+    <code data-type="sct">
+      test_function("print")
+      test_object("i", undefined_msg = "Assurez-vous de définir une variable `i`.")
+      success_msg("Bravo ! Vous avez terminé l'exercice.")
+    </code>
+    <div data-type="hint">
+      <p>Utilisez une boucle while avec une condition pour afficher les nombres de 1 à 5.</p>
     </div>
-    <div data-datacamp-exercise data-lang="r" data-height="350">
-      <code data-type="pre-exercise-code"># no pec</code>
-      <code data-type="sample-code">
-        # Declare variables of different types
-        my_numeric &lt;- 42
-        my_character &lt;- &quot;universe&quot;
-        my_logical &lt;- FALSE
-
-        # Check class of my_numeric
-        class(my_numeric)
-
-        # Check class of my_character
-
-
-        # Check class of my_logical
-      </code>
-      <code data-type="solution">
-        # Declare variables of different types:
-        my_numeric &lt;- 42
-        my_character &lt;- &quot;universe&quot;
-        my_logical &lt;- FALSE
-
-        # Check class of my_numeric
-        class(my_numeric)
-
-        # Check class of my_character
-        class(my_character)
-
-        # Check class of my_logical
-        class(my_logical)
-      </code>
-      <code data-type="sct">
-        msg &lt;- &quot;Do not change the declaration of the variables!&quot;
-        lapply(c(&quot;my_numeric&quot;, &quot;my_character&quot;, &quot;my_logical&quot;),
-        test_object, undefined_msg = msg, incorrect_msg = msg)
-        patt &lt;- &quot;Have you included `class(%1$s)` to print out the data type of
-        `%1$s`?&quot;
-        test_output_contains(&quot;class(my_numeric)&quot;,
-        incorrect_msg = &quot;Do not remove the code that prints out the type of
-        `my_numeric`.&quot;)
-        test_output_contains(&quot;class(my_character)&quot;,
-        incorrect_msg = sprintf(patt, &quot;my_character&quot;))
-        test_output_contains(&quot;class(my_logical)&quot;,
-        incorrect_msg = sprintf(patt, &quot;my_logical&quot;))
-        success_msg(&quot;Congratulations! This was the last exercise for this chapter. Head
-        over to the next chapter to get immersed in the world of vectors!&quot;)
-      </code>
-      <div data-type="hint">
-        <p>The code that prints the data type of
-          <code>my_numeric</code> is already included; do a similar things for
-          <code>my_character</code> and
-          <code>my_logical</code>.
-        </p>
-      </div>
+    <div data-type="error-message" data-content="i">
+      <p>Veuillez définir la variable `i`.</p>
     </div>
   </div>
+</div>
+
+
+
+
+
+
+<div class="exercise">
+  <div class="title">
+    <h2>Affichage des lettres d'une chaîne de caractères</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="250">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Affichage des lettres d'une chaîne de caractères
+      word = "Python"
+      for letter in word:
+          print(letter)
+    </code>
+    <code data-type="solution">
+      # Affichage des lettres d'une chaîne de caractères
+      word = "Python"
+      for letter in word:
+          print(letter)
+    </code>
+    <code data-type="sct">
+      test_function("print")
+      test_object("word", undefined_msg = "Assurez-vous de définir une variable `word` contenant une chaîne de caractères.")
+      success_msg("Bravo ! Vous avez terminé cet exercice.")
+    </code>
+    <div data-type="hint">
+      <p>Utilisez une boucle for pour parcourir chaque lettre de la chaîne de caractères et les afficher.</p>
+    </div>
+    <div data-type="error-message" data-content="word">
+      <p>Veuillez définir la variable `word`.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="exercise">
+  <div class="title">
+    <h2>Vérification d'un nombre pair ou impair</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="250">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Vérification d'un nombre pair ou impair
+      number = 15
+      if number % 2 == 0:
+          print("Le nombre est pair.")
+      else:
+          print("Le nombre est impair.")
+    </code>
+    <code data-type="solution">
+      # Vérification d'un nombre pair ou impair
+      number = 15
+      if number % 2 == 0:
+          print("Le nombre est pair.")
+      else:
+          print("Le nombre est impair.")
+    </code>
+    <code data-type="sct">
+      test_function("print")
+      test_object("number", undefined_msg = "Assurez-vous de définir une variable `number` contenant un nombre entier.")
+      success_msg("Bravo ! Vous avez terminé cet exercice.")
+    </code>
+    <div data-type="hint">
+      <p>Utilisez l'opérateur modulo (%) pour vérifier si un nombre est pair ou impair.</p>
+    </div>
+    <div data-type="error-message" data-content="number">
+      <p>Veuillez définir la variable `number`.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<h1>Les chaîne de caractères</h1>
+<div class="exercise">
+  <div class="title">
+    <h2>Vérification de la présence d'une lettre dans une chaîne de caractères</h2>
+  </div>
+  <div data-datacamp-exercise data-lang="python" data-height="250">
+    <code data-type="pre-exercise-code"># no pec</code>
+    <code data-type="sample-code">
+      # Vérification de la présence d'une lettre dans une chaîne de caractères
+      word = "python"
+      letter = "y"
+      if letter in word:
+          print(f"La lettre '{letter}' est présente dans la chaîne.")
+      else:
+          print(f"La lettre '{letter}' n'est pas présente dans la chaîne.")
+    </code>
+    <code data-type="solution">
+      # Vérification de la présence d'une lettre dans une chaîne de caractères
+      word = "python"
+      letter = "y"
+      if letter in word:
+          print(f"La lettre '{letter}' est présente dans la chaîne.")
+      else:
+          print(f"La lettre '{letter}' n'est pas présente dans la chaîne.")
+    </code>
+    <code data-type="sct">
+      test_function("print")
+      test_object("word", undefined_msg = "Assurez-vous de définir une variable `word` contenant une chaîne de caractères.")
+      test_object("letter", undefined_msg = "Assurez-vous de définir une variable `letter` contenant une lettre.")
+      success_msg("Bravo ! Vous avez terminé cet exercice.")
+    </code>
+    <div data-type="hint">
+      <p>Utilisez l'opérateur 'in' pour vérifier si une lettre est présente dans une chaîne de caractères.</p>
+    </div>
+    <div data-type="error-message" data-content="word">
+      <p>Veuillez définir la variable `word`.</p>
+    </div>
+    <div data-type="error-message" data-content="letter">
+      <p>Veuillez définir la variable `letter`.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
 
 </body>
 </html>

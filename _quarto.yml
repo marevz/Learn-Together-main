@@ -2,13 +2,12 @@ project:
   type: website
 
 website:
+  title: "Python pour les nuls"
+  back-to-top-navigation: true
   navbar:
-    tools: 
-      - search: true
-        button_text: Search
     background: light
-  
-    left: 
+    foreground: black
+    left:
       - text: Introduction
         file: Python.qmd
       - text: Les fondamentaux
@@ -17,15 +16,23 @@ website:
         file: Exceptions.qmd
       - text: S'entrainer
         file: Exercices.qmd
+    tools:
+      - icon: linkedin
+        href: https://www.linkedin.com/in/mareva-perez-b26a4a258/
+      - icon: github
+        menu:
+          - text: Code source
+            href: https://github.com/marevz/Learn-Together-main
 
 
+  search: 
+    location: navbar
+    type: textbox
 
 format:
   html:
     theme: zephyr
     css: styles.css
     toc: true
-
-
 
 
